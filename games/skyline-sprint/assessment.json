@@ -1,0 +1,54 @@
+{
+ "date": "2026-10-18T19:22",
+ "readiness": 42,
+ "market_potential": 30,
+ "scores": {
+  "gameplay": 44,
+  "content_difficulty": 46,
+  "art": 40,
+  "audio": 28,
+  "ux_onboarding": 48,
+  "mobile": 42,
+  "stability": 52,
+  "store": 24
+ },
+ "weights": {
+  "gameplay": 20,
+  "content_difficulty": 15,
+  "art": 15,
+  "audio": 8,
+  "ux_onboarding": 10,
+  "mobile": 10,
+  "stability": 12,
+  "store": 10
+ },
+ "assessors": {
+  "opus": {
+   "scores": {
+    "gameplay": 44,
+    "content_difficulty": 46,
+    "art": 40,
+    "audio": 28,
+    "ux_onboarding": 48,
+    "mobile": 42,
+    "stability": 52,
+    "store": 24
+   },
+   "market_potential": 30,
+   "market_notes": "The 3-lane runner genre is one of the most crowded on mobile, dominated by Subway Surfers and Temple Run with huge content and live-ops budgets. A precision/medal twist and neon pixel style aren't enough to stand out without much deeper content, meta progression and polished feel.",
+   "summary": "This is a solid, well-tested prototype. All tests pass (17-control regression, a runtime smoke test, and a latency bot showing slack drops from 0.45s to 0.10s across 8 stages). The loop is lane + jump/slide + walls, with medals, a daily run, Overdrive and skins. But it is a single ~32KB minified game.js running a fixed loop of 8 short stages (~5 min total campaign), and its HUD is text-heavy with four rows of labels. Owner AI pixel art (runner, drone, barrier, backgrounds, icon) looks decent, but the backdrops have their own baked-in lanes that clash with the canvas-drawn perspective lanes. The store screenshots and the live menu still show flat-rectangle programmer art, audio is fully procedural oscillator beeps/loops, and monetization is an unwired stub.",
+   "blockers": [
+    "Store screenshots in assets/store show programmer-art rectangles and fallback sprites, not the owner art. Real on-device screenshots are needed, and the screenshots claim 6 stages while the game has 8.",
+    "Monetization and compliance are stubs. The SkylineAds.showRewarded bridge is not wired, there is no ad SDK, ATT/UMP consent, IAP, analytics or crash reporting, and no privacy policy is hosted at a URL.",
+    "Audio is procedural WebAudio oscillator SFX and a synth loop with no real music or sound assets, so it falls far short of genre expectations.",
+    "Content is thin for the genre: 8 short authored loops (~5 min campaign) plus Daily and Overdrive, no endless mode or meta economy, and only cosmetic hue-shift skins. Retention will be weak against Subway Surfers-class competitors.",
+    "Visual coherence and mobile readability: the canvas-drawn lanes and HUD overlay sit on top of backdrops with baked-in tracks, far gates are tiny near the horizon, and the HUD is cluttered with text. The menu card overflowed horizontally in a 430px-wide headless render. Native iOS/Android projects were never generated or device-tested (cap add not run)."
+   ],
+   "readiness": 42
+  }
+ },
+ "errors": {
+  "astra": "s://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:58 PM.\nERROR: You\u2019ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:58 PM.\n"
+ },
+ "sessions_at_assessment": 48
+}

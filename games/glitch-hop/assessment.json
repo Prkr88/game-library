@@ -1,0 +1,75 @@
+{
+ "date": "2026-10-18T18:12",
+ "readiness": 50,
+ "market_potential": 36,
+ "scores": {
+  "gameplay": 56,
+  "content_difficulty": 60,
+  "art": 53,
+  "audio": 42,
+  "ux_onboarding": 48,
+  "mobile": 44,
+  "stability": 58,
+  "store": 28
+ },
+ "weights": {
+  "gameplay": 20,
+  "content_difficulty": 15,
+  "art": 15,
+  "audio": 8,
+  "ux_onboarding": 10,
+  "mobile": 10,
+  "stability": 12,
+  "store": 10
+ },
+ "assessors": {
+  "opus": {
+   "scores": {
+    "gameplay": 55,
+    "content_difficulty": 60,
+    "art": 48,
+    "audio": 38,
+    "ux_onboarding": 50,
+    "mobile": 48,
+    "stability": 60,
+    "store": 28
+   },
+   "market_potential": 33,
+   "market_notes": "Neon precision platformers are a crowded niche on mobile (Geometry Dash, Leap Day, Super Meat Boy-likes). On-screen D-pad controls cap retention, and nothing here hooks players beyond the stars, Daily, and skins.",
+   "summary": "This is a mechanically solid web prototype with real physics feel: coyote time, jump buffer, variable jump, squash, particles, shake and haptics. It has 65 levels across 12 mechanic worlds, and the full bot suite passes for all 65. The difficulty curve is verified only by bot beam width, with no human playtesting. Art is coherent AI-generated pixel art, but the ground tiles blend into the busy parallax and the player is tiny on screen. Audio is entirely procedural WebAudio synth. Monetization, native packaging, and store assets are unfinished, so it is not shippable today.",
+   "blockers": [
+    "No working monetization: GlitchAds is an empty hook. showRewarded falls back to cb(true), so 'Skip level (ad)' skips for free. There is no AdMob/IAP SDK and no consent/ATT flow, and privacy.html would need updating once ads are added.",
+    "Packaging is incomplete: no ios/ or android/ projects exist, www/ is stale (src/main.js and logic.js differ from www/src), the Capacitor config has no orientation lock or plugins (Haptics isn't installed), and nothing has been tested on a device.",
+    "Store assets aren't ready: the shot-run screenshot is missing the jump button and is a headless capture, there are no portrait or iPad sizes, and there are no on-device screenshots or preview video. The privacy policy isn't hosted at a URL.",
+    "Readability and art polish: stone tiles get a 50% dark overlay and their busy pattern blends into the bright parallax city behind them. The 16px player is small on phones, and the tutorial hint has low contrast. Hazards also need stronger contrast against the background.",
+    "Difficulty is tuned only by a beam-search bot (pars set at 1.3-1.5x bot time) with no human playtesting. Settings are minimal: only mute, with no music/SFX volume, control size/position, or left-handed layout. Audio is synth-only, with no authored music tracks."
+   ],
+   "readiness": 50
+  },
+  "astra": {
+   "scores": {
+    "gameplay": 58,
+    "content_difficulty": 60,
+    "art": 58,
+    "audio": 46,
+    "ux_onboarding": 47,
+    "mobile": 40,
+    "stability": 55,
+    "store": 27
+   },
+   "market_potential": 38,
+   "market_notes": "Precision platforming offers niche speedrun appeal, but neon styling and familiar mechanics provide weak differentiation. Touch precision and repetitive island sequences limit broader commercial appeal.",
+   "summary": "Substantial web prototype with 65 levels, forgiving jump mechanics, real PNG assets, and synthesized music/SFX; not ready for mobile-store release. node test.js passed all 65 normal-level solves, and audio stub test passed, but neither proves human difficulty, sound quality, or device reliability. PNG inspection exposed busy backgrounds and weak gameplay separation; live browser and device validation were unavailable.",
+   "blockers": [
+    "Native release incomplete: no iOS/Android projects or signed builds present. Packaged www code differs from tested source, including missing reduced-motion handling; regenerate and validate actual device builds.",
+    "Fix conflicting death/win states: reproduced level 2 emitting die:spike and win together. Respawn leaves won true, allowing completion after fatal contact; existing tests miss this.",
+    "Monetization remains stubbed: rewarded-ad fallback immediately grants success without showing an ad. Resolve release business model, publish privacy policy, and replace listing's nonexistent ghost feature claim and provisional screenshots.",
+    "Improve mobile readability and onboarding: detailed backgrounds compete with tiny sprites and hazards, HUD is crowded, and ice, wind, and moving platforms lack introductory hints. Validate multitouch, safe areas, and sustained performance on phones.",
+    "Validate mastery and difficulty with human touch playtests: solver checks normal exit reachability, often collecting few coins, without proving three-star routes or Glitch/Daily solvability. Repetitive platform chains and uneven challenge need tuning."
+   ],
+   "readiness": 51
+  }
+ },
+ "errors": {},
+ "sessions_at_assessment": 44
+}

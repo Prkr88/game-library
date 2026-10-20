@@ -1,0 +1,291 @@
+{
+  "name": "Skyline Sprint",
+  "slug": "skyline-sprint",
+  "genre": "Precision auto-runner",
+  "description": "Switch lanes, jump barriers, and slide under drones across six escalating neon rooftop stages.",
+  "created": "2026-10-18",
+  "updated": "2026-10-18",
+  "readiness": 92,
+  "market_potential": 64,
+  "market_notes": "One-thumb runners have broad mobile reach, while lane-switch timing and stage mastery create replay depth; neon presentation and short runs support ad-friendly sessions. Crowded genre requires stronger content, art, audio, and retention testing before store launch.",
+  "readiness_notes": "Playable canvas loop, six deterministic stages with authored eight-gate pattern families, replayable unlocked-stage selector for medal/mastery runs, date-seeded daily challenge, separate daily best, unlocked Summit Overdrive with isolated record and a separate 12-gate reversal route, persistent 0-3 stage medals for clear/shard/flawless mastery, six persistent achievements with clear/menu feedback, persistent normal best clean streak with live HUD and recap feedback, nearest-gate lane/action HUD guidance with change-only live announcements, persistent current-lane HUD and pause recap action context, lane movement, jump/slide hazards, shards, local best and stage unlocks, persistent earned runner cosmetics with safe skin-save normalization and generated/owner PNG hue treatments, optional one-use rewarded revive bridge with web-safe hidden fallback, touch+keyboard controls, visible mobile pause button with focus handoff to resume, automatic visibility-change pause with frame-timing-safe resume, clean-gate particle/cue feedback with optional haptic, local WebAudio action/clean/fail/clear cues with persistent mute toggle, coherent generated neon PNG runner/hazard/icon/splash assets plus six stage-specific skyline fallback PNGs with regeneration source and owner-art priority, runtime skyline background with distance-driven drift, sprite-first runner and hazard rendering with geometry fallback, responsive HUD, manifest, Capacitor shell, and HTTP(S) cache-first service worker. Missing: human tuning, native ad wiring, and store QA.",
+  "sessions": 49,
+  "entry": "index.html",
+  "next_steps": [
+    "Verify other gen PNGs for needed alpha; re-screenshot store shots with fixed touch buttons/shards",
+    "Tune new SFX mix on device (noise crash/whoosh levels)",
+    "Capture gate-close-up and recap screenshots on device; consider larger far-gate sprites for readability",
+    "Human-playtest Overdrive at 0.06s tighter spacing; bot says 0.10s reaction slack",
+    "Run npm run cap:add on a dev machine; capture store screenshots",
+    "Tune music mix/volume on device; consider owner music file",
+    "Human playtest first-run controls briefing and HOW TO PLAY panel on small portrait screens",
+    "Human playtest owner sprite framing, lane spacing, authored pattern readability, upcoming-gate lane cue, jump/slide timing, HUD pause button, background auto-pause, and medal recap",
+    "Human playtest Summit Overdrive reversal route and 12-gate readability",
+    "Add stronger skyline art and tune generated audio on device",
+    "Human playtest rewarded revive timing and wording on small portrait screens",
+    "Wire native SkylineAds.showRewarded bridge and interstitial hooks",
+    "Store screenshots and Capacitor device QA",
+    "Drop owner lane-floor, shard, FX, and touch-button PNGs into assets/ when available",
+    "Playtest wall gates for fairness; add music; native builds",
+    "Playtest wall frequency/readability on device",
+    "Playtest longer stages for pacing; consider mid-stage checkpoints",
+    "Human-playtest Zenith; consider owner bg-stage-7/8 art"
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Added bot.js latency-bot difficulty verification (perfect clears all stages+Overdrive, idle fails, reaction slack 0.45s->0.20s, Overdrive 0.10s); eased Overdrive spacing -0.10s to -0.06s after bot showed 0.05s slack was inhuman."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Made local save writes fail-safe for restricted or full storage and made recognized keyboard controls case-insensitive while preventing browser defaults; focused regression and syntax checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Fixed startup control binding: selector helper now normalizes bare ids used by menu, pause, result, and settings handlers; added 17-control and touch-delegation regression coverage; syntax, JSON, and config checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added generated fallback PNGs for perspective lane floor, shards, clean-gate FX, touch controls, and store feature art; wired owner-first loading, gameplay rendering, touch buttons, regeneration source, and offline cache coverage; syntax, PNG inventory, visual inspection, and HTTP checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added first-run controls briefing plus reusable HOW TO PLAY panel covering lane choice, JUMP/SLIDE matching, timing HUD, shards, and medal mastery; tutorial completion persists safely in local save; syntax, JSON, and HTTP entry checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added optional one-use rewarded revive hook: native SkylineAds.showRewarded('skyline-revive') can continue failed runs from current distance after clearing nearby gates; button stays hidden without bridge and normal progression remains unchanged."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added persistent earned runner skins: AQUA, SUNSET, GOLD, and VOID unlock from normal clears or Summit Overdrive; menu cycles owned skins, corrupt selections fall back safely, and PNG runner art receives cosmetic hue treatments without gameplay changes."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Fixed owner-supplied runner and hazard PNGs rendering as square sprites; source aspect ratios now stay intact with bottom anchoring while generated sheet fallbacks remain unchanged."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added owner-supplied runner, jump, slide, barrier, and drone PNG priority loading with generated-sheet fallbacks; syntax, asset, and HTTP entry checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added pre-run stage mastery preview with exact target, spacing pressure, gate count, lane changes, shard count, action route, and remaining medal goals; stage selector accessibility label mirrors selected progress; syntax, route-shape, asset, and HTTP entry checks pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added bounded previous/next stage picker so every unlocked stage can be replayed for medal, shard, and flawless mastery; locked progression remains unchanged; syntax, wiring, and HTTP entry checks pass; readiness 90->92."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added separate 12-gate Summit Overdrive route with 11 lane/action reversals; timing modifier, score isolation, and normal progression remain unchanged; syntax, asset, and HTTP entry checks pass; readiness 88->90."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added unlocked Summit Overdrive: 12% faster movement and 0.10s tighter gate spacing with separate best score and isolated progression; syntax, JSON, and HTTP entry checks pass; readiness 86->88."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added persistent current-lane HUD feedback and pause recap context for lane plus upcoming gate action; lane changes announce once without per-frame live-region spam; syntax, JSON, and HTTP entry checks pass; readiness 84->86."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added six persistent skill achievements with corruption-safe save normalization, clear recap unlock feedback, and menu progress/listing; syntax, JSON, and focused save checks pass; readiness 82->84."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Made generated and owner-supplied runner/hazard PNG sprites primary canvas visuals; geometric silhouettes now appear only as load-time fallback, removing duplicate art; syntax, JSON, and asset checks pass; readiness 80->82."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added six stage-specific generated skyline PNG fallbacks with owner-art priority, stage-aware runtime selection, regeneration source, and offline cache coverage; syntax, JSON, asset, visual, and entry checks pass; readiness 78->80."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Wired generated skyline background PNG into canvas runtime with subtle distance-driven horizontal drift behind lane geometry; syntax, asset, and HTTP entry checks pass; readiness 76->78."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added coherent local neon PNG art pack: skyline background, four-frame runner, jump barrier, drone hazard, app icon, and splash; added SVG regeneration source, runtime sprite wiring, manifest icon, and offline cache coverage; syntax, asset, visual, and HTTP entry checks pass; readiness 72->76."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added visibility-change auto-pause for active runs when mobile apps or tabs background; resume resets frame timing so hidden time cannot advance physics; syntax and entry checks pass; readiness 70->72."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added actionable upcoming-gate HUD guidance across all lanes: NEXT/NOW urgency, LEFT/CENTER/RIGHT direction, required jump/slide action, shard marker, and change-only live announcements; physics unchanged; syntax and entry checks pass; readiness 68->70."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added clean-streak mastery: consecutive clean gates now appear in live HUD and pause/clear/failure recaps; normal best streak persists, failed gates reset current streak, and daily runs stay isolated; syntax, JSON, HTTP entry, and focused wiring checks pass; readiness 66->68."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added persistent 0-3 medals per normal stage: clear, collect shards, and flawless gate execution; menu and clear recap expose mastery progress; syntax, HTTP entry, metadata, and difficulty checks pass; readiness 62->66."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added local WebAudio cues for action, clean gate, failure, and stage clear; added persistent SOUND ON/OFF menu toggle with gesture-safe unlock; syntax, JSON, HTTP entry, and difficulty checks pass; readiness 59->62."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added clean-gate feedback: CLEAN JUMP/CLEAN SLIDE cue, local particle burst, one live announcement, and optional brief vibration after successful hazard crossings; collision and progression unchanged; readiness 56->59."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Replaced repeated global hazard loop with six authored eight-gate pattern families; stage-specific lane rhythms and date-seeded daily rotation add replay variety without changing collision rules; syntax, HTTP entry, pattern-shape, and difficulty checks pass; readiness 53->56."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added date-seeded Daily Run with rotated hazard lanes, tighter spacing, separate daily best, isolated progression, menu/HUD/pause/retry labels, and difficulty verification; readiness 48->53."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Added visible in-run mobile pause button with safe-area HUD styling and focus handoff to resume; touch players can pause without Escape; syntax, metadata, entry, and cache checks pass; readiness 45->48."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "codex",
+      "summary": "Created Skyline Sprint: six-stage precision auto-runner with deterministic escalating hazards, lane/jump/slide controls, shard collection, local progression, pause/resume, responsive touch HUD, accessibility live feedback, Capacitor shell, and offline web cache."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Gates now span lanes (stage 1: 2 of 3 lanes, later stages: all 3, mixed jump/slide), so lane-dodging no longer bypasses jump/slide; lane cue uses current-lane gate and THIS LANE label; [hidden] CSS override fixed; regression test extended."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Added solid WALL gates (stage 3+, daily, overdrive) that force lane switches; HUD cue, render, fail message, regression test."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Procedural WebAudio music loop (bass + arp + hats) scheduled during runs only; tempo 104->152 BPM and layers scale by stage, Daily, Overdrive; respects SOUND toggle and pause."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Capacitor packaging: package.json, www build script (webDir=www), STORE.md listing/privacy/QA checklist, build test."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Added headless runtime smoke test (smoke.js): runs game.js on stub DOM, plays normal/daily/overdrive runs to death with random input, asserts no runtime errors."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Stages lengthened from ~10s to 30-60s; route lanes rotate per cycle to avoid repetition; tests pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Redrew runner sheet: shaded 128px back-view hoodie runner, 4 run frames + distinct jump and slide poses; sprite sampler now uses real cell size (fixes coin/fx fallback crop)."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Solid wall gates now render a generated PNG sprite (assets/gen/wall-gate.png, owner-first loader) instead of flat red rectangles; sw cache bumped."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Hazard fallback art redrawn (art/hazards.py): shaded striped barrier with lamps and glowing red-eye drone with rotor discs; tests pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Captured 1080x1920 store screenshots (menu, briefing, how-to, run) into assets/store via headless Chrome; STORE.md updated. Noted: far gates tiny near horizon - playtest readability."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Audio juice: clean-gate SFX pitch rises with clean streak (up to +8 semitones); shard pickup chime. Tests pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Screen shake on crash and subtle on clean gates (respects reduced-motion), crash haptic."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Failure recap now shows distance vs stage target and % of stage completed; tests pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "PERFECT timing rank: gates cleared with action pressed within 0.1s show PERFECT JUMP/SLIDE; clear recap lists perfect count; npm test passes."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Practice checkpoint: failing past 50% of a stage offers PRACTICE FROM 50% (never saves score/medals/progress); bot test covers it."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Per-stage intro banner (2.6s) announcing new mechanic: lanes, all-lane, walls, speed, Daily, Overdrive; npm test passes."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Designed SFX: noise whoosh/crash, pitched jump sweep, slide swoosh, lane tick (action cue was previously a bare square beep); tests pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Fixed opaque-white PNG bug: btn-*, coin, fx-clean were rendered without alpha (white squares for shards/touch buttons); re-rendered with rsvg-convert, generator fixed; touch buttons now contain-sized icon + label, taller hit area."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Owner touch-button PNGs (btn-left/right/jump/slide) now skin controls on load (was only after first press); explicit filename map."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Campaign extended to 8 stages (Neon Core, Zenith); bot-verified slack 0.15/0.10s; tests + smoke pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Dedicated Neon Core/Zenith backdrops (assets/gen/bg-stage-7/8.png via art/make_stage_bgs_7_8.py), wired + sw cache v10; tests + smoke pass."
+    },
+    {
+      "date": "2026-10-18",
+      "agent": "claude",
+      "summary": "Audio: master compressor + reverb bus for all SFX/music, kick/hat/snare layers scaling with stage; sw v11."
+    }
+  ]
+}

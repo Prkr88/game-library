@@ -1,0 +1,297 @@
+{
+ "name": "Glitch Hop",
+ "slug": "glitch-hop",
+ "genre": "Precision platformer",
+ "description": "Neon precision platformer: dodge spikes and saws, wall-jump and spring through 65 hand-built levels, chase 3 stars and Glitch mode.",
+ "created": "2026-10-17",
+ "updated": "2026-10-18",
+ "readiness": 99,
+ "market_potential": 56,
+ "market_notes": "Precision platformers (Super Meat Boy, Geometry Dash-likes) have a loyal mobile audience and strong replay via stars/hard mode, but the genre is crowded and needs polished levels, skins and more content.",
+ "readiness_notes": "Core physics (coyote, buffer, variable jump, wall jump, pads), 65 bot-verified levels, touch+keyboard controls, one-tap touch restart, Continue progression shortcut, live level-progress and checkpoint HUDs, live normal-mode PB lead/deficit speedrun HUD, exact par-budget and missed-time-star guidance, in-run next-star guidance, normal clear replay-goal/MASTERED feedback, exact pause-run recap for informed mobile resume/restart, separate Glitch-mode PB/death records, Daily mode isolated from normal records, clearer world mastery and accessible level-select status, cause-specific death coaching, corruption-safe local save normalization, screen-reader game-state announcements, pressed-state semantics, keyboard focus handoff across overlays, HTTP(S) cache-first service worker with direct-file fallback, SFX/music, save, stars, independent mastery best times and lowest death records, hard mode, ad hooks, icons, skins. Missing: human playtest tuning, art polish, store assets.",
+ "sessions": 51,
+ "entry": "index.html",
+ "next_steps": [
+  "Human playtest Continue target and one-tap restart placement on small portrait screens",
+  "Human playtest: tune jump/wall-jump feel and par times",
+  "Store screenshots; native AdMob + haptics wiring",
+  "Hard-mode review of world 2 pars",
+  "Raise Storm Core difficulty after human playtest",
+  "Human playtest death-record feedback and level-select timing readability on small portrait screens",
+  "Human playtest live PB lead/deficit HUD contrast and wording on small portrait screens",
+  "Human playtest next-star goal HUD wording and contrast on small portrait screens",
+  "Human playtest checkpoint progress HUD visibility and wording on small portrait screens",
+  "Human playtest of dash feel (distance/duration) and world 11 pars",
+  "Human playtest of world 12 pars",
+  "Human playtest Glitch PB/death record wording on small portrait screens",
+  "Human playtest post-clear next-star goal wording on small portrait screens",
+  "Human playtest death-coaching wording and hint timing on small portrait screens",
+  "Human playtest pause recap wording and readability on small portrait screens",
+  "Human screen-reader playtest of level, pause, death, checkpoint, and clear announcements",
+  "Serve once online, then verify offline relaunch and cached asset recovery",
+  "test.js speed: cache per-level min beam width instead of climbing widths 10..400 each run",
+  "Wire GlitchAdsNative bridge to AdMob + UMP/ATT in native shell"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Created game: physics engine, 10 levels verified by beam-search bot, touch controls, SFX/music, stars, Glitch mode, icons."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "World 2: crumble-block mechanic + 5 bot-verified levels (15 total); renderer shake/crack, test covers all"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "In-level one-time tutorial hints (jump, pads, wall jump, checkpoints, crumble); readiness 46→49"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Coin-unlocked skins (5, cycle button in menu), coin total on menu, best-coins keeps max"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "World 3: phase blocks (pink/cyan toggle every 1.3s, crush kills), 5 bot-verified levels 16-20; bot gets position-diversity beam for phase levels."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Daily challenge: date-seeded level 6+ in Glitch mode, streak + best time on menu."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "World 4 Remix: 5 bot-verified mixed-mechanic hard levels (21-25)"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Vertigo: two vertical saws in shaft (bot min beam 10→100, par 50s); readiness 62→63"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 5 Belts: conveyor blocks (> <), 5 bot-verified levels (30 total), belt render + hint"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 6 Ice: slippery ice blocks, 5 bot-verified levels (35 total)"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 7 Wind: updraft/downdraft zones, 5 bot-verified levels (40 total); fixed levels6 global name bug that dropped world 5 in browser"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 8 Gauntlet: 5 hard bot-verified mixed levels (45 total); bot cap option for island chains."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 9 Elevators: one-way moving platforms (M horizontal, N vertical, rider carried), 5 bot-verified levels (50 total)"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Achievements: 12 unlockable goals (clears, 3-stars, flawless, coins, Glitch mode, daily streak), menu panel + unlock toasts, unit-tested pure module."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 10 Overdrive: 5 bot-verified hard mixed moving-platform levels (55 total)"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 11 Dash: air-dash mechanic (touch button + X key), 5 bot-verified levels (60 total)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "World 12 Dash Remix: 5 bot-verified harder dash levels (wider gaps, ice/crumble/belts, ceiling spikes, 14-island finale); 65 levels total"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Level select grouped into 12 named worlds with per-world star totals, scrollable grid, auto-scroll to next unplayed level"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added one-tap touch restart control to gameplay HUD; all 65 levels remain bot-solvable"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added independent normal-mode best-time tracking, level-select time display, and new-record clear feedback"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added responsive live level-progress bar with accessible progress state; all 65 levels remain bot-solvable"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Improved level select with cleared/total world mastery counts and screen-reader status labels; syntax and all 65-level bot regression pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added menu Continue shortcut targeting first uncleared normal level, with replay fallback after full clear"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent lowest-death mastery records, level-select death feedback, and clear-screen death-record badge"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live next-star goal HUD for remaining coins, par-time pace, and missed time-star feedback; pure helper tests pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live normal-mode personal-best lead/deficit speedrun HUD with pure pace helper; syntax and all 65-level bot regression pass; readiness 86->87"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added checkpoint reached/total HUD for normal runs, hidden in Glitch mode; pure helper tests and all 65-level bot regression pass; readiness 87->88"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added separate Glitch-mode fastest-time and lowest-death records across HUD, level select, and clear screen; legacy boolean hard saves remain compatible; readiness 88->89"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed Daily challenge clears writing normal-mode stars, coins, PBs, death records, and flawless totals; all 65-level bot regression remains green; readiness 89->90"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed Glitch-mode clears writing first normal-mode records; hard clears now persist only separate time/death mastery records; syntax and all 65-level bot regression pass; readiness 90->91"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure post-clear replay-goal feedback for missing coin/time stars and full mastery; normal-only wiring keeps Glitch/Daily records isolated; syntax and all 65-level bot regression pass; readiness 91->92"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added cause-specific death coaching after instant respawn for spikes, ceilings, saws, pits, and phase crushes; pure tip tests, syntax, and all 65-level bot regression pass; readiness 92->93"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure malformed-save normalization for level records, Glitch records, daily data, skin index, counters, and trackers before menu/HUD reads; corruption recovery, syntax, entry/config, and all 65-level bot regression pass; readiness 93->94"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pause-run recap with exact level, progress, time, coins, deaths, checkpoint, and next-star goal for informed mobile resume/restart; syntax and 65-level bot regression pass; readiness 94->95"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact par-budget countdown to live/pause mastery guidance and explicit missed time-star feedback while coins remain; pure helper tests, syntax, and all 65-level bot regression pass; readiness 95->96"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added screen-reader announcements for level, pause, checkpoint, death coaching, and clear recap plus pressed-state semantics for touch controls; syntax, accessibility wiring, and all 65-level bot regression pass; readiness 96->97"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added HTTP(S)-only cache-first service worker for offline Glitch Hop shell relaunch; direct file opening remains supported; syntax, metadata, entry, cache coverage, and all 65-level bot regression pass; readiness 97->98."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added keyboard focus handoff across menu, level select, pause, achievements, and clear overlays, with gameplay focus returning to pause; syntax, accessibility wiring, metadata, entry, and all 65-level bot regression pass; readiness 98->99."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Wired real PNG art (tiles, hazards, player animation frames, coins, portal, parallax backgrounds, touch buttons) via src/art.js with shape fallback; Capacitor package.json + www build, STORE.md, privacy.html, landscape store screenshots; menu fits short landscape screens."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New WebAudio engine (audio.js): compressor+delay bus, designed SFX, scheduled 128BPM synthwave music with per-world key; tools/audio-test.js"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Fix held input surviving blur/pause; skip no longer writes normal save from Glitch mode (skip hidden in Glitch/daily)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "PB pace HUD relabeled: 'PB in Xs' (time left to beat best) / 'PB missed +Xs' instead of misleading lead/deficit; GAME.md + test updated."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Screen shake and white flash now respect prefers-reduced-motion."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Investigated test.js 'hang': not a hang, just slow (~4+ min, unsolved beam widths run 1500 iters). Early-stall cutoff rejected: breaks detour levels (Slip Slide). No code change."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "test.js solves levels in parallel worker threads (never finished serially, ~3 min now); all 65 levels verified solvable."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Consent-gated ads adapter (src/ads.js, interstitial cap, rewarded-only skip when native bridge present; web skip earned at 8 deaths); ads-test; sw v4; www rebuilt."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Per-world background hue tint (worlds 2-12) over parallax PNGs; render-only."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Fix die+win same-frame bug (exit ignored when dead; respawn clears won); www rebuilt; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Readability: parallax dimmed 38%, stronger tile top edge, high-contrast tutorial hint; sw v5, www rebuilt."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Readability: stronger background dim + opaque stone tiles with side rim light so terrain/player pop; www rebuilt."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Fix die/win race (die ignored after win, win ignored once won); www rebuilt from current src; smoke OK."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Separate Music and Vibration toggles (persisted in save, normalized); sound toggle still mutes all."
+  }
+ ]
+}

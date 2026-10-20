@@ -1,0 +1,7 @@
+{
+  "appId": "com.gamelibrary.stackrush",
+  "appName": "Stack Rush",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#14213d"
+}

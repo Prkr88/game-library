@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b24">
+<title>Orbit Hop</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<canvas id="game" role="application" aria-label="Orbit Hop game. Tap, click, or press Space to launch the comet toward the next planet."></canvas>
+<div id="hud" class="hidden"><div><div id="hudMode">ORBIT</div><div id="hudScore">0</div><div id="hudStatus" aria-hidden="true"></div><div id="hudTarget" aria-hidden="true"></div><div id="hudCombo" aria-hidden="true"></div></div><div id="hudCoins">★ 0</div></div>
+<div id="hudAnnounce" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<button id="btnPause" class="hidden" aria-label="Pause">❚❚</button>
+<div id="pause" class="panel hidden"><h2>PAUSED</h2><p id="pauseSummary" class="hint" aria-live="polite"></p><p id="pauseTarget" class="gold" aria-live="polite"></p><button id="btnResume" class="big">RESUME</button><button id="btnQuit">Quit</button></div>
+<div id="tip">Tap to launch outward.<br>Land on the next planet!</div>
+<div id="menu" class="panel">
+  <h1>ORBIT<br>HOP</h1>
+  <p id="menuBest"></p>
+  <button id="btnPlay" class="big" aria-label="Play">PLAY</button>
+  <button id="btnDaily">DAILY</button>
+  <button id="btnHard">HARD</button>
+  <div class="row"><button id="btnShop">Skins</button><button id="btnMissions">Missions</button><button id="btnAch" aria-label="Open achievements">🏆</button><button id="btnMute" aria-label="Mute sound">🔊</button></div>
+</div>
+<button id="btnSettings" aria-label="Settings">⚙</button>
+<div id="over" class="panel hidden">
+  <h2 id="ovTitle">LOST IN SPACE</h2>
+  <div id="ovScore" class="score">0</div>
+  <p id="ovRun" class="hint"></p><p id="ovBest"></p><p id="ovDepth" class="gold"></p><p id="ovHint" class="hint"></p><p id="ovStreak" class="gold"></p><p id="ovNext" class="gold"></p><p id="ovAch" class="gold"></p><p id="ovCoins"></p><p id="ovMissions" class="gold"></p>
+  <button id="btnRevive" class="big">▶ CONTINUE (ad)</button>
+  <button id="btnRetry" class="big">RETRY</button>
+  <div class="row"><button id="btnDouble">2× ★ (ad)</button><button id="btnMenu">Menu</button></div>
+</div>
+<div id="shop" class="panel hidden">
+  <h2>SKINS</h2><p id="shopCoins"></p>
+  <div id="shopList"></div>
+  <button id="btnShopBack">Back</button>
+</div>
+<div id="missions" class="panel hidden">
+  <h2>MISSIONS</h2>
+  <div id="missionList"></div>
+  <button id="btnMissionsBack">Back</button>
+</div>
+<div id="settings" class="panel hidden">
+  <h2>SETTINGS</h2>
+  <button id="setMusic" role="switch"></button><button id="setSfx" role="switch"></button><button id="setHaptics" role="switch"></button>
+  <button id="btnSettingsBack">Back</button>
+</div>
+<div id="ach" class="panel hidden">
+  <h2>ACHIEVEMENTS</h2>
+  <div id="achList"></div>
+  <button id="btnAchBack">Back</button>
+</div>
+<script src="src/ads.js"></script>
+<script src="src/logic.js"></script>
+<script src="src/missions.js"></script>
+<script src="src/daily.js"></script>
+<script src="src/achievements.js"></script>
+<script src="src/haptics.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/save.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

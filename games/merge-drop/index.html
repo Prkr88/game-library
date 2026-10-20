@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#1b1b3a"><title>Merge Drop</title>
+<link rel="icon" href="assets/favicon-32.png" type="image/png"><link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="src/style.css"></head>
+<body><canvas id="game" tabindex="0" role="img" aria-label="Merge Drop board" aria-describedby="board-help"></canvas>
+<p id="board-help" class="sr-only">Merge equal numbered tiles by dropping them into one of five columns. Use left and right arrows to choose a column, then press Enter or Space to drop. Number keys 1 through 5 select and drop directly. Press Escape to pause or resume.</p>
+<div id="hud"><div id="mode-label" aria-label="Current mode"></div><div id="score">0</div><div id="best"></div><div id="timer" aria-live="polite"></div><div id="danger" role="status" aria-live="polite"></div><div id="goal" role="status" aria-live="polite"></div><div id="plan" role="status" aria-live="polite"></div><div id="msg"></div></div>
+<div id="coach" class="hidden" role="status" aria-live="polite"></div>
+<button id="pause" aria-label="Pause game">⏸</button>
+<div id="pause-panel" class="panel hidden"><h2>PAUSED</h2><p id="pause-stats" class="hint" role="status" aria-live="polite"></p><button id="resume">RESUME</button><button id="quit">Quit run</button></div>
+<div id="pw"><button id="hint" class="hidden" aria-label="Show hint">💡 HINT</button><button id="bomb" aria-label="Bomb power-up"><img class="pi" data-ic="powerup-bomb" alt="" width="32" height="32"> <span id="nb">0</span></button><button id="undo" aria-label="Undo last drop"><img class="pi" data-ic="powerup-undo" alt="" width="32" height="32"> <span id="nu">0</span></button><button id="swap" aria-label="Swap next tile"><img class="pi" data-ic="powerup-swap" alt="" width="32" height="32"> <span id="ns">0</span></button></div>
+<div id="menu" class="panel"><h1>MERGE<br>DROP</h1><p id="mbest"></p><p id="mrecords" class="hint"></p><p class="hint">Tap a column to drop.<br>Match numbers to merge!</p>
+<button id="play">PLAY</button><button id="daily">📅 DAILY</button><button id="rise">⬆ RISE (hard)</button><button id="hard">💀 HARDCORE</button><button id="blitz">⚡ BLITZ (60s)</button><button id="dpuzzle">🧩 DAILY PUZZLE</button><button id="puzzle">🧩 PUZZLES</button><button id="theme">🎨</button><p id="tlock" class="hint"></p><button id="mute">🔊</button><button id="hap">📳</button><button id="achbtn">🏆</button><button id="setbtn" aria-label="Settings">⚙</button></div>
+<div id="ach-panel" class="panel hidden"><h2>ACHIEVEMENTS</h2><div id="alist"></div><button id="achback">Back</button></div>
+<div id="set-panel" class="panel hidden"><h2>SETTINGS</h2><label class="row">Music <input id="vol-music" type="range" min="0" max="100" aria-label="Music volume"></label><label class="row">Sound FX <input id="vol-sfx" type="range" min="0" max="100" aria-label="Sound effects volume"></label><button id="set-mute"></button><button id="set-hap"></button><button id="setback">Back</button></div>
+<div id="cont" class="panel hidden"><h2>BOARD FULL!</h2><div id="cscore" class="big">0</div><button id="revive">▶ CLEAR LOW TILES (ad)</button><button id="skip">No thanks</button></div>
+<div id="pz-panel" class="panel hidden"><h2>PUZZLES</h2><p id="pz-sum" class="hint"></p><div id="pz-list"></div><button id="pzback">Back</button></div>
+<div id="over" class="panel hidden"><h2 id="otitle">GAME OVER</h2><div id="fscore" class="big">0</div><p id="fbest"></p><p id="fchase" class="chase" role="status" aria-live="polite"></p><p id="ftile" class="hint"></p>
+<p id="fstats" class="hint"></p><button id="pznext" class="hidden">NEXT PUZZLE ▶</button><button id="retry">RETRY</button><button id="share">SHARE 📤</button><button id="home">Menu</button></div>
+<script src="src/ads.js"></script><script src="src/audio.js"></script><script src="src/haptics.js"></script><script src="src/achievements.js"></script><script src="src/logic.js"></script><script src="src/puzzles.js"></script><script src="src/main.js"></script><script>if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
+</body></html>

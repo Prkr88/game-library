@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#14213d"><title>Stack Rush</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="src/style.css"></head>
+<body><canvas id="game" tabindex="0" role="img" aria-label="Stack Rush game board. Tap, click, or press Space to drop the moving block."></canvas>
+<div id="toast"></div>
+<div id="hud"><div id="mode"></div><div id="record"></div><div id="goal" aria-live="polite"></div><div id="goalbar" role="progressbar" aria-label="Mastery goal progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div><div id="cue" aria-live="polite"></div><div id="feedback" aria-live="polite"></div><div id="precision"></div><div id="score">0</div><div id="combo"></div><div id="msg"></div></div>
+<button id="pausebtn" aria-label="Pause">❚❚</button>
+<div id="pause" class="panel hidden"><h2>PAUSED</h2><p id="pinfo" aria-live="polite"></p><button id="resume">RESUME</button><button id="quit">Menu</button></div>
+<div id="menu" class="panel"><h1>STACK<br>RUSH</h1><p id="best"></p><p id="last" aria-live="polite"></p>
+<p id="coins"></p><p id="stats"></p><button id="play">PLAY</button><button id="daily" class="hidden"></button><button id="chal"></button><button id="hard"></button><button id="theme"></button><button id="mute">🔊</button></div>
+<div id="cont" class="panel hidden"><h2>SO CLOSE!</h2><div id="cscore" class="big">0</div><p id="cinfo" aria-live="polite"></p><button id="revive">▶ CONTINUE (ad)</button><button id="skip">No thanks</button></div>
+<div id="over" class="panel hidden"><h2>TOWER FELL</h2><div id="fscore" class="big">0</div><p id="fbest"></p><p id="fcoins"></p>
+<button id="double" class="hidden"></button><p id="fstats"></p><p id="fgoal"></p><button id="retry">RETRY</button><button id="home">Menu</button></div>
+<script src="src/logic.js"></script><script src="src/ads.js"></script><script src="src/audio.js"></script><script src="src/main.js"></script></body></html>

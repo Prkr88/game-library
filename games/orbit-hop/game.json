@@ -1,0 +1,254 @@
+{
+ "name": "Orbit Hop",
+ "slug": "orbit-hop",
+ "genre": "Hyper-casual / one-tap arcade",
+ "description": "One-tap space arcade: orbit a planet, tap to launch outward, land on the next world. Chain fast hops for combos, grab stars, unlock comet skins.",
+ "created": "2026-10-17",
+ "updated": "2026-10-18",
+ "readiness": 99,
+ "market_potential": 58,
+ "market_notes": "One-tap orbit/jump games (Orbit, Planet Hop-likes) are a proven hyper-casual niche with ad-driven revenue; low CPI potential via satisfying short clips. Crowded genre, so differentiation (juice, skins, modes) decides success.",
+ "readiness_notes": "Core loop + hazards (black holes w/ gravity, collapsing planets), daily challenge seed and streak, generated ambient music, corruption-safe local save normalization, skins, rewarded-ad stub, Capacitor config, in-run mode/planet/shield/combo/flight HUD, exact pause-run recap with phase and laser timing context, immediate next-segment hazard preview, laser timing guidance, next-target launch guidance, mode-scoped depth and last-run records, retry coaching, recap feedback, mobile-safe scrollable panels, labeled icon/canvas controls with visible keyboard focus, change-only screen-reader HUD announcements, and HTTP(S) cache-first service worker with direct-file fallback. Icons/splash/manifest done. Missing: real ad SDK, native haptics plugin, human playtest tuning, missions, live offline install verification.",
+ "sessions": 44,
+ "entry": "index.html",
+ "next_steps": [
+  "Human playtest death-cause retry tips and wording on small portrait screens",
+  "Human playtest launch guide readability and AIM READY timing on small portrait screens",
+  "Human playtest mode/status/combo/laser HUD readability on small portrait screens",
+  "Human playtest & tune hole pull/collapse timers",
+  "Bundle @capacitor/haptics in native build",
+  "Native AdMob wrapper must set window.OrbitAds.showRewarded/showInterstitial",
+  "Human playtest next-mission target readability on small portrait screens",
+  "Human playtest deepest-planet record wording on small portrait screens",
+  "Human playtest last-run recap density and mode/score wording on small portrait screens",
+  "Human playtest mode-scoped depth wording and O/H/D menu density on small portrait screens",
+  "Human playtest immediate hazard preview wording and line wrapping on small portrait screens",
+  "Human test recovery after corrupting orbithop localStorage root, missions, achievements, or daily fields",
+  "Human test screen-reader labels, keyboard focus, and canvas control announcement",
+  "Human playtest pause recap density, phase wording, laser timing, and offline relaunch on small portrait screens",
+  "Test Orbit HUD announcements with a screen reader; confirm countdown decimals and aim-angle frames stay silent",
+  "Gameplay store shot shows score 0: capture mid-run with autoplay bot"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Created game: core orbit/launch loop, procedural planets incl. moving ones, combos, stars, skin shop, save, WebAudio SFX, menus, tutorial hint."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Added black hole hazards with gravity pull, collapsing (timed) planets, daily challenge mode with date seed + daily best, generated ambient music loop, death-cause titles; bot-tuned difficulty."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Added missions system (12 tiered missions, coin rewards, menu panel, game-over summary) for retention"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Added app icon (SVG + 192/512/1024 PNG), splash (2732px), web manifest, icon links in index.html."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Endless generated missions after fixed pool (scaling targets/rewards); never runs out."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Haptics bridge (src/haptics.js): Capacitor Haptics when native, vibrate fallback."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Mission claim animation (staggered pop on game over, animated progress bars)"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Pause (button, P/Esc, auto on tab hide), OrbitAds rewarded/interstitial hooks (every 3rd retry)"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Rewarded CONTINUE (one revive per run, undoes banking), logic.revive + test.js"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Patrolling asteroids from planet 28 (late-game challenge); aim-bot test: 15 rock deaths over 40 seeds."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Achievements system (11, panel + game-over unlock animation, star rewards, tested)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Hard mode (unlocks at best 25): starts at planet-30 difficulty, hazards early; aim-bot avg 68.5→25.6; separate hard best."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Flipper planets (spin reverses on timer from planet 36, flash warning) + close-call near-miss bonus (+1 score); bot-tested."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Laser gates (planet 45+, hard from 15): timed full-width beam with flash warning; wait in orbit for beam off. Bot-verified: aware bot zaps 1 vs naive 5."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Shield orb pickup (absorbs one hazard hit, tested with bot)"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent daily challenge streaks with same-day guard, consecutive-day reset logic, menu/game-over feedback, and pure tests"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added in-run mode badge plus planet and shield status HUD for clearer Daily/Hard context and pickup state"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live combo HUD feedback for fast-hop mastery; syntax and full logic/difficulty suite pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live next-laser timing guidance to HUD with GO/WAIT/countdown states; full logic and syntax suite pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure next-target aim guidance, accessible AIM READY HUD, and cyan launch target marker; full logic, hazard, and difficulty suite pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure closest-mission targeting and post-run NEXT MISSION progress/reward feedback; syntax and full logic/difficulty suite pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added cause-specific game-over retry tips for laser, asteroid, black-hole, collapse, and miss deaths; full syntax and logic/difficulty suite pass; readiness 86->87"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent deepest-planet and lifetime-run records to menu/game-over feedback, with revive rollback; syntax and full logic/difficulty suite pass; readiness 87->88"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent last-run recap for mode, score, depth, stars, combo, and close calls across game-over and menu; syntax and full logic/difficulty suite pass; readiness 88->89"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made panels mobile-safe with viewport-bounded touch scrolling so long game-over recaps keep retry/menu controls reachable; readiness 89->90"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Scoped exploration depth records by Orbit/Hard/Daily mode with legacy-save migration and clearer menu/game-over feedback; readiness 90->91"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure immediate-segment hazard preview for black holes, asteroids, and lasers in live orbit HUD; collision rules unchanged; syntax, full logic, and difficulty checks pass; readiness 91->92"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure ORBIT/FLIGHT/OVER phase helper and live FLIGHT TO target HUD after launch; syntax, pure logic, and full difficulty regression pass; readiness 92->93"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure local-save normalization for malformed root, daily, mission, achievement, owned-skin, and last-run fields; renderer now boots safely from corrupted browser saves; full logic and difficulty regression pass; readiness 93->94"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact pause-run recap for mode, score, planet, combo, shield, next planet, and immediate hazards; syntax, logic, difficulty, and entry checks pass; readiness 94->95"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added phase-aware pause recap and pure immediate laser timing state so mobile resume decisions show ORBIT/FLIGHT context and gate countdown; full syntax, hazard, and difficulty regression pass; readiness 95->96"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added accessible labels for canvas and icon-only controls plus visible keyboard focus styling; gameplay unchanged; syntax, full logic/difficulty regression, metadata, and entry checks pass; readiness 96->97"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added HTTP(S)-only cache-first service worker for Orbit Hop shell assets; direct file opening remains supported; syntax, full logic, metadata, entry, and cache coverage checks pass; readiness 97->98."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Separated visual Orbit HUD from a change-only polite screen-reader announcement channel; continuous laser countdown and aim-angle frames no longer spam assistive technology; syntax, full logic, difficulty, metadata, entry, and accessibility wiring checks pass; readiness 98->99."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Real PNG art pack (art/gen.py -> assets/gen): 8 planets, shrink planet, asteroids, black hole, star, comet + 4 skins, nebula bgs, explosion frames. Owner-first image loader wired into all rendering with shape fallback; cached offline."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Orbit Hop store packaging: privacy.html, STORE.md, package.json + www build, Capacitor webDir=www; fixed btnDouble staying enabled after Retry."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Wired owner bg-stars.png (parallax star layer) and orbit-ring.png (rotating glow ring) with generated fallbacks + offline cache; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New WebAudio engine (src/audio.js): reverb bus, pentatonic combo-pitched landings, designed jump/star/shield/death SFX, lookahead-scheduled ambient music whose tempo/layers scale with depth."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Space/Enter now dismisses tutorial; fly-timeout death titled DRIFTED INTO THE VOID with tip; menu stats line decluttered."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Real app icons (art/make_icons.py, cropped from owner splash) replace placeholder: icons/, maskable, apple-touch, favicon, Capacitor resources; manifest/index/sw/www build wired; sw v4"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Store screenshots (menu, skins, missions, achievements, gameplay; 1290x2796) via scripts/shots.js"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Owner btn-play.png (menu Play button) and laser-gate.png (emitters + stretched beam) wired; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Real ads adapter (src/ads.js, consent-gated, capped interstitial, native-bridge-only rewarded); web no longer grants free Continue/2x rewards, buttons hidden without native ads; sw v5, www rebuilt; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Settings panel (music/SFX/vibration toggles, persisted, gear button on menu), menu bottom row fits narrow screens; sw v6, www rebuilt; tests + smoke pass."
+  }
+ ]
+}

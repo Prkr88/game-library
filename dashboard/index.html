@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Library</title><style>
+:root{--bg:#0d1117;--card:#161b22;--card2:#1c2230;--line:#30363d;--fg:#e6edf3;--mut:#8b949e;--acc:#58a6ff;--ok:#3fb950;--warn:#d6a020;--bad:#e5534b}
+*{box-sizing:border-box;min-width:0}
+body{font:14px system-ui,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:16px;overflow-wrap:anywhere}
+main{max-width:1280px;margin:auto}
+a{color:var(--acc)}h1{margin:0 0 12px;font-size:22px}h2{font-size:15px;margin:22px 0 8px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+h3{margin:0;font-size:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;overflow:hidden}
+.row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.pill{padding:4px 10px;border-radius:99px;font-weight:600;font-size:12px;white-space:nowrap}
+.k{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.04em}.v{font-size:16px;font-weight:650}
+.d{color:var(--mut);font-size:12px}
+button{background:#21262d;color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;font:inherit;font-size:13px;cursor:pointer}
+button:hover{border-color:var(--acc)}button.p{background:#1f6feb;border-color:#1f6feb}button:disabled{opacity:.5;cursor:default}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(380px,100%),1fr));gap:12px}
+.bar{background:#21262d;height:7px;border-radius:4px;overflow:hidden}.bar div{height:100%}
+.score{display:grid;grid-template-columns:110px 1fr 30px;gap:6px;align-items:center;font-size:12px;margin:3px 0}
+.big{display:flex;gap:16px;margin:10px 0}.big>div{flex:1;background:var(--card2);border-radius:8px;padding:8px 10px}
+.big .n{font-size:24px;font-weight:700}
+details{margin-top:8px}summary{cursor:pointer;color:var(--acc);font-size:12px}
+ul{margin:4px 0;padding-left:18px}li{margin:2px 0}
+pre{white-space:pre-wrap;word-break:break-word;font-size:12px;margin:0;max-height:340px;overflow:auto}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:12px}
+.chip{display:inline-block;background:var(--card2);border-radius:4px;padding:1px 6px;margin:2px;font-size:11px;font-family:ui-monospace,monospace}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%}
+.stats>div{background:var(--card2);border-radius:8px;padding:8px 10px}
+</style></head><body><main>
+<h1>🎮 Game Library</h1>
+<div class="card"><div class="row" id="sys">Loading…</div><div class="stats" id="stats" style="margin-top:12px"></div></div>
+<h2 id="gh">Games</h2><div class="games" id="games"></div>
+<div class="cols">
+ <div><h2>Current task</h2><div class="card"><div id="taskbar"></div><pre id="task"></pre></div>
+  <h2>Events</h2><div class="card"><ul id="events" class="d"></ul></div>
+  <h2>Session history</h2><div class="card"><ul id="hist" class="d"></ul></div></div>
+ <div><h2>Activity <span id="logname" style="text-transform:none"></span></h2><div class="card"><pre id="log"></pre></div></div>
+</div></main>
+<script>
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const col=v=>v<40?'var(--bad)':v<70?'var(--warn)':'var(--ok)';
+const bar=v=>`<div class="bar"><div style="width:${v||0}%;background:${col(v||0)}"></div></div>`;
+const dur=s=>s==null?'—':s<60?s+'s':s<3600?Math.floor(s/60)+'m '+s%60+'s':Math.floor(s/3600)+'h '+Math.floor(s%3600/60)+'m';
+const LABEL={gameplay:'Gameplay',content_difficulty:'Content/difficulty',art:'Art',audio:'Audio',ux_onboarding:'UX/onboarding',mobile:'Mobile',stability:'Stability',store:'Store'};
+const open=new Set();
+async function act(a){const r=await fetch('/api/'+a,{method:'POST'});if(!r.ok)alert((await r.json()).error);load()}
+function game(g){
+  const a=g.assessment, sc=a?a.scores:{};
+  const ass=a?Object.entries(a.assessors||{}).map(([k,v])=>`${k} ${v.readiness}`).join(' · '):'';
+  return `<div class="card">
+  <div class="row" style="justify-content:space-between"><h3><a href="/games/${esc(g._dir)}/${esc(g.entry||'index.html')}" target="_blank">${esc(g.name)}</a></h3><span class="d">${esc(g.genre)}</span></div>
+  <div class="d" style="margin-top:4px">${esc(g.description)}</div>
+  <div class="big">
+   <div><div class="k">Readiness</div><div class="n" style="color:${a?col(g.readiness):'var(--mut)'}">${a?g.readiness:'?'}</div>${a?bar(g.readiness):'<div class="d">not assessed</div>'}</div>
+   <div><div class="k">Market</div><div class="n" style="color:${a?col(g.market_potential):'var(--mut)'}">${a?g.market_potential:'?'}</div>${a?bar(g.market_potential):''}</div>
+   <div><div class="k">Owner art</div><div class="n">${g.assets_owner}/${g.assets_total}</div>${bar(g.assets_total?Math.round(100*g.assets_owner/g.assets_total):0)}</div>
+  </div>
+  ${a?`<div class="d" style="margin-bottom:6px">${esc(a.summary||Object.values(a.assessors)[0]?.summary)}</div>
+   ${Object.keys(LABEL).map(k=>`<div class="score"><span>${LABEL[k]}</span>${bar(sc[k])}<span>${sc[k]??''}</span></div>`).join('')}
+   <div class="d" style="margin-top:6px">Assessed ${esc(a.date.replace('T',' '))} · ${esc(ass)} · self-score was ${g.self_readiness??'—'}${Object.keys(a.errors||{}).length?' · ⚠ '+Object.keys(a.errors).join(','):''} failed</div>`
+   :`<div class="d">Self-reported readiness ${g.self_readiness??'—'} (unverified).</div>`}
+  ${a?`<div class="k" style="margin-top:10px">Release blockers</div><ul class="d">${(Object.values(a.assessors)[0]?.blockers||[]).slice(0,5).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  <details data-k="${esc(g._dir)}-more" ${open.has(g._dir+'-more')?'open':''}><summary>Details · ${g.sessions??0} sessions · updated ${esc(g.updated)}</summary>
+   ${a?`<div class="k" style="margin-top:8px">Market notes</div><div class="d">${Object.entries(a.assessors).map(([k,v])=>`<b>${k}:</b> ${esc(v.market_notes)}`).join('<br>')}</div>`:''}
+   ${a&&Object.keys(a.assessors).length>1?`<div class="k" style="margin-top:8px">Second opinion blockers</div><ul class="d">${(Object.values(a.assessors)[1].blockers||[]).slice(0,5).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+   <div class="k" style="margin-top:8px">Next steps (agent)</div><ul class="d">${(g.next_steps||[]).slice(0,5).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+   <div class="k" style="margin-top:8px">Recent changes</div><ul class="d">${g.changelog.map(c=>`<li>${esc(c.date)} <b>${esc(c.agent)}</b>: ${esc(c.summary)}</li>`).join('')}</ul>
+   ${g.missing_assets.length?`<div class="k" style="margin-top:8px">Missing owner art (see ASSET_PROMPTS.md)</div>${g.missing_assets.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}${g.assets_total-g.assets_owner>g.missing_assets.length?' …':''}`:''}
+  </details>
+  <div class="row" style="margin-top:10px"><button ${g.assessing?'disabled':''} onclick="act('assess/${esc(g._dir)}')">${g.assessing?'⏳ Assessing…':'🔍 Re-assess (Opus + Astra)'}</button></div>
+ </div>`}
+async function load(){
+  let d;try{d=await (await fetch('/api/status')).json()}catch(e){$('sys').innerHTML='<span class="pill" style="background:var(--bad)">Dashboard server offline</span>';return}
+  document.querySelectorAll('details[data-k]').forEach(x=>x.open?open.add(x.dataset.k):open.delete(x.dataset.k));
+  const s=d.system,e=d.events,G=d.games;
+  const [label,bg]=s.running?[`RUNNING · ${s.agent||'agent'}`,'var(--ok)']:s.paused?['PAUSED','var(--warn)']:[`IDLE · tokens used up · retry in ${dur(3600-Math.floor(Date.now()/1000)%3600)}`,'#30363d'];
+  $('sys').innerHTML=`<span class="pill" style="background:${bg}">${label}</span>
+   <span class="d">${s.running?'running for '+dur(s.elapsed_s):s.last_log_time?'last activity '+dur(s.now-s.last_log_time)+' ago':''}</span>
+   <div style="margin-left:auto" class="row">
+    ${s.paused?'<button class="p" onclick="act(\'resume\')">▶ Resume</button>':'<button onclick="act(\'pause\')">⏸ Pause</button>'}
+    ${s.running?'<button onclick="confirm(\'Kill the running session?\')&&act(\'stop\')">■ Stop session</button>':`<button ${s.paused?'disabled':''} onclick="act('run')">⚡ Run now</button>`}</div>`;
+  const assessed=G.filter(g=>g.assessment), avg=k=>assessed.length?Math.round(assessed.reduce((t,g)=>t+g[k],0)/assessed.length):'—';
+  const art=G.reduce((t,g)=>[t[0]+g.assets_owner,t[1]+g.assets_total],[0,0]);
+  $('stats').innerHTML=[['Games',G.length],['Avg readiness',avg('readiness')],['Avg market',avg('market_potential')],['Assessed',`${assessed.length}/${G.length}`],
+    ['Owner art',`${art[0]}/${art[1]}`],['Sessions total',s.total_sessions],['Today claude/codex',`${e.today.claude}/${e.today.codex}`],['Limits hit today',e.today.limits]]
+    .map(([k,v])=>`<div><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+  $('gh').textContent=`Games (${G.length}) · sorted by priority (market × remaining work)`;
+  $('games').innerHTML=G.map(game).join('')||'<div class="d">No games yet.</div>';
+  const t=s.current_task, done=(t.match(/- \[x\]/g)||[]).length, tot=(t.match(/- \[.\]/g)||[]).length;
+  $('taskbar').innerHTML=tot?`<div class="d" style="margin-bottom:6px">${done}/${tot} steps</div>${bar(Math.round(100*done/tot))}<div style="height:8px"></div>`:'';
+  $('task').textContent=t;
+  $('events').innerHTML=e.recent.map(x=>`<li>${esc(x)}</li>`).join('')||'<li>none yet</li>';
+  $('hist').innerHTML=s.sessions.map(x=>`<li>${esc(x.slice(2))}</li>`).join('')||'<li>none</li>';
+  $('logname').textContent=(s.running?'🔴 LIVE · ':'')+(s.last_log||'');
+  const L=$('log'),stick=L.scrollTop+L.clientHeight>=L.scrollHeight-20;L.textContent=s.last_log_tail||'';if(stick)L.scrollTop=L.scrollHeight;
+}
+load();setInterval(load,5000);
+</script></body></html>

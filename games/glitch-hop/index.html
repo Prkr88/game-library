@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f24"><title>Glitch Hop</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="src/style.css"></head>
+<body><canvas id="game" tabindex="-1" aria-label="Glitch Hop game area. Use arrow keys or touch controls to move, jump, and dash."></canvas>
+<div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="toast"></div>
+<div id="hint"></div>
+<div id="hud" class="hidden"><span id="hlevel"></span><span id="htime">0.0</span><span id="hbest">PB —</span><span id="hdeaths">☠ 0</span><span id="hcoins">● 0</span><span id="hcheckpoint" class="hidden">⚑ CP 0/0</span><span id="hgoal">★ goal</span></div>
+<div id="hprogress" class="hidden" role="progressbar" aria-label="Level progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="hfill"></span></div>
+<button id="restartbtn" class="hidden" aria-label="Restart level">↻</button>
+<button id="pausebtn" class="hidden" aria-label="Pause">❚❚</button>
+<div id="controls" class="hidden">
+ <div class="pad"><button id="bl" aria-label="Left">◀</button><button id="br" aria-label="Right">▶</button></div>
+ <div class="pad"><button id="bd" class="hidden" aria-label="Dash">»</button><button id="bj" aria-label="Jump">⤒</button></div>
+</div>
+<div id="menu" class="panel"><h1>GLITCH<br>HOP</h1><p class="sub">precision platformer</p>
+ <button id="continue">CONTINUE</button><button id="play" class="small">LEVELS</button><button id="daily" class="small">📅 Daily</button><button id="skin" class="small">🎨 Skin</button><button id="achbtn" class="small">🏆 Achievements</button><button id="mute" class="small">🔊 Sound on</button><button id="musicbtn" class="small">🎵 Music on</button><button id="vibbtn" class="small">📳 Vibration on</button><p id="total"></p></div>
+<div id="achp" class="panel hidden"><h2>ACHIEVEMENTS</h2><div id="alist"></div><button id="achback" class="small">Back</button></div>
+<div id="select" class="panel hidden"><h2>LEVELS</h2><div id="grid"></div>
+ <button id="hardtog" class="small">☠ Glitch mode: off</button><button id="back" class="small">Back</button></div>
+<div id="pause" class="panel hidden"><h2>PAUSED</h2><p id="pstats"></p><button id="resume">RESUME</button><button id="restart" class="small">Restart level</button>
+ <button id="skip" class="small hidden">Skip level (ad)</button><button id="quit" class="small">Levels</button></div>
+<div id="win" class="panel hidden"><h2 id="wtitle">CLEAR!</h2><div id="wstars" class="stars"></div><p id="wstats"></p><p id="wbadge"></p><p id="wgoal"></p>
+ <button id="next">NEXT</button><button id="again" class="small">Retry</button><button id="wquit" class="small">Levels</button></div>
+<script src="src/ads.js"></script><script src="src/audio.js"></script><script src="src/achievements.js"></script><script src="src/logic.js"></script><script src="src/save.js"></script><script src="src/levels.js"></script><script src="src/levels2.js"></script><script src="src/levels3.js"></script><script src="src/levels4.js"></script><script src="src/levels5.js"></script><script src="src/levels6.js"></script><script src="src/levels7.js"></script><script src="src/levels8.js"></script><script src="src/levels9.js"></script><script src="src/levels10.js"></script><script src="src/levels11.js"></script><script src="src/levels12.js"></script><script src="src/art.js"></script><script src="src/main.js"></script><script src="src/register-sw.js"></script></body></html>

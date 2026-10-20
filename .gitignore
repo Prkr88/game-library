@@ -1,0 +1,15 @@
+# dependencies / environments
+node_modules/
+system/.venv/
+# build output (regenerate with `npm run build` in each game)
+games/*/www/
+games/*/dist/
+games/*/android/
+games/*/ios/
+# runtime state
+logs/
+system/.lock
+system/PAUSED
+games/*/.assessing
+games/*/smoke.png
+.DS_Store

@@ -1,0 +1,449 @@
+{
+ "name": "Merge Drop",
+ "slug": "merge-drop",
+ "genre": "Puzzle / drop-merge",
+ "description": "Drop numbered tiles into columns, merge equal neighbours, chain combos.",
+ "created": "2026-10-17",
+ "updated": "2026-10-18",
+ "readiness": 99,
+ "market_potential": 62,
+ "market_notes": "Drop-merge (Merge Block / 2248 style) is a proven top-grossing casual puzzle niche with strong ad monetization; crowded but retention-friendly.",
+ "readiness_notes": "Core loop, chain scoring, audio, revive hook, icons, first-run hint, themes, music, modes, achievements, working one-use undo with restored mastery HUD, accessible run HUD, exact pre-drop merge/chain/fatality preview, touch planning feedback, live tile-mastery goal chase, game-over drops/chain/level summary, date-scoped Daily record chase, exact pre-update mode-record chase feedback, persistent mode records plus last-run menu recap, defensive localStorage recovery, safe-area touch-scrolling panels, pause recap with true top-row occupancy plus exact Blitz seconds, semantic board instructions, keyboard column navigation/drop activation, and Escape pause toggle done. Missing: real ad integration, balance playtest, store art.",
+ "sessions": 84,
+ "entry": "index.html",
+ "next_steps": [
+  "Tune audio mix on-device",
+  "Real AdMob SDK + consent",
+  "Owner art to replace assets/icon-1024.png & splash.png placeholders",
+  "Capture mid-chain, Rise, Blitz, theme screenshots on-device",
+  "Implement MergeAdsNative in native shell (AdMob + UMP/ATT) and IAP remove-ads",
+  "Publish privacy.html at public URL"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Created Merge Drop: logic, canvas UI, audio, revive hook, icons, tests."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Bomb + swap-next power-ups (earned via chains/drops), first-run hint, logic tests; refactored cascade into settle()."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Daily challenge: date-seeded board, daily best, streak; menu button."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Pause button/overlay (auto-pause on tab hide), floating +score text on merges, land pop animation."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Board-clear bonus (+500, +bomb), danger-zone pulse, tile gloss, tests."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Tile drop-fall animation, top-tile tracking on game over, interstitial hook every 3 runs."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Ambient music loop; 3 unlockable themes (Neon/Sunset/Ocean) by best tile."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Ghost landing preview (gold outline when drop will merge); balance sim via random play."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Haptics bridge (Capacitor Haptics/vibrate) + haptics toggle in menu."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Achievements system (8 achievements, menu panel, unlock toasts, tested)."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Difficulty ramp: level every 15 drops, wider tile values, unmergeable stones (bomb-only removal); random-play avg run 139\u219282 drops"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Rise hard mode: junk row pushes stack up every 8\u21924 drops; sim avg run 82\u219233 drops; separate best score."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "6 more achievements (14 total): chain x6, Rise 1k, level 8, 10 bombs, daily, 50 runs; tracks maxLevel/bombsUsed."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Undo button (1 per run, not in Daily; RNG-exact restore, tested)"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Blitz mode: 60s timer, chains add time, own best score, +1 achievement (15 total)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed bomb power-up tap crash caused by stale undefined undo snapshot reference; bomb animation and state flow now continue normally."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed normal-drop Undo path by persisting pre-drop snapshot before animation; existing RNG-exact restore remains covered by tests."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added accessible run HUD mode label, external Blitz countdown with low-time warning, and top-row danger status"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added touch-synced planning HUD for next tile, selected column, full columns, and merge-ready drops; labeled power-up controls"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure exact pre-drop merge/chain preview to planning HUD and ghost target; full logic and syntax checks pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live tile-mastery goal HUD with pure next-goal helper, near-target emphasis, and post-run remaining feedback; logic and syntax checks pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added game-over run summary for drops, best chain, and reached level; pure state and undo snapshot tests pass; readiness 87->88"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent Classic/Rise/Blitz/Daily records and last-run menu recap with score, drops, tile, chain, and record-chase feedback; syntax and logic suite pass; readiness 88->89"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact pre-update mode-record chase feedback to game-over, including points needed and new-record margin; pure helper and syntax/logic checks pass; readiness 89->90"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Scoped Daily record chase and menu display to current calendar date, preventing yesterday's score from contaminating a new day's feedback; pure helper, syntax, and logic checks pass; readiness 90->91"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed Undo leaving live tile-mastery goal HUD on post-drop values; restored board now refreshes score, goal, planning, and power-up feedback; syntax and full logic suite pass; readiness 91->92"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure fatal-drop simulation to planning HUD; selected legal drops now show red GAME OVER warning before commitment; syntax, logic, and difficulty checks pass; readiness 92->93"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added defensive localStorage normalization for malformed root, daily, counter, theme, achievement, and last-run fields; logic, corruption-recovery, syntax, and entry/config checks pass; readiness 93->94"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made achievement, pause, continue, and game-over panels safe-area padded and touch-scrollable on short portrait screens; gameplay unchanged; readiness 94->95"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact pause recap for mode, score, drops, top tile, best chain, next tile, mastery progress, and top-row occupancy; gameplay unchanged; readiness 95->96."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed pause top-row occupancy to read true row zero and added exact Blitz seconds remaining to recap; syntax, logic, difficulty, metadata, and entry checks pass; readiness 96->97."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added semantic board instructions, visible canvas focus, keyboard column navigation and drop activation, plus Escape pause toggle; core logic and Rise difficulty tests pass; readiness 97->98."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Auto-focused board after starting or touching a run, completing keyboard handoff; syntax, logic, difficulty, metadata, and entry checks pass; readiness 98->99."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Generated PNG art pack (art/generate_art.py -> assets/gen): glossy jelly tiles per value x3 themes, stone, board, bg, icon, splash, store feature; owner-first loader with canvas fallback wired into main.js; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New WebAudio engine (src/audio.js): compressor+reverb, enveloped voices, value/chain-pitched merge chimes, bomb/drop/land/undo/level/clear/game-over SFX, chord-progression adaptive music with danger heartbeat; audio-test.js smoke."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Glossy PNG power-up icons (bomb/swap/undo/coin, art/powerups.py) replace emoji on buttons with owner-first loader; Capacitor www build (scripts/build-www.js, package.json, webDir www) and STORE.md listing."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "First-run 3-step coach (drop, merge, chain) driven by real drops; HUD decluttered (best folded into mode line, smaller score)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Replaced placeholder 192/512 icons with generated jelly icon; added maskable, 180 apple-touch, favicon, Capacitor resources/ icon+splash; manifest/index wired."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Generated fx-merge/fx-combo/ui-panel/ui-button PNGs (art/ui_fx.py); merge sparkle bursts and glossy PNG menu buttons wired owner-first."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Wired fx-combo PNG as animated CHAIN xN banner on board (owner-first, gen fallback)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Menu/game-over/pause panels now use frosted ui-panel PNG card (9-slice border-image, owner-first), dimmed backdrop."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Store screenshots (menu, run) captured to assets/store; fixed stray HUD score bleeding through menu panel."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Settings panel: separate music/SFX volume sliders (audio buses), sound+haptics toggles, persisted & normalized; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Added bot.js difficulty bot (random/greedy/planner, Classic+Rise) proving skill depth and monotone stone ramp; documented in GAME.md."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle mode: 12 solver-verified fixed-board levels with par/3-star scoring, unlock chain, menu grid; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle pack 2: 8 expert solver-verified levels (par 7-8, zero-slack limits, up to 3 stones); 20 puzzles total; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Ads adapter src/ads.js: consent-gated, frequency-capped interstitial (every 3rd run, 120s gap), rewarded revive only when reward earned, remove-ads flag; inert on web, bridge via window.MergeAdsNative; tests added."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Daily Puzzle: date-seeded hard puzzle (upper half of 20), streak + best stars persisted, normalized save; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Added privacy.html (store requirement) shipped in Capacitor www build; STORE.md updated; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Fixed puzzle-select grid overflow (3rd column clipped) and menu bleed-through behind puzzle panel; added Rise/Blitz/Puzzle store screenshots + scripts/shots.sh generator."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "2048 tile redrawn as iridescent rainbow jelly (art/generate_art.py rainbow pass) per ASSET_PROMPTS spec"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Hardcore mode: 9-drop levels, stones from level 1 (up to 30%), wider tile pool, no undo; own best score. Bot: planner survives 79 drops vs 123 Classic; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Capacitor resources/splash.png rebuilt (2732 square, blurred full-bleed fill + sharp splash art; art/make_resource_splash.py) replacing small panel on flat navy."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Achievements store screenshot added; shots.sh accepts optional bestTile/theme save args."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle pack 3: 4 depth-9 zero-slack expert levels (24 total), solver-verified; generator pack3 mode."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Short-landscape layout: compact HUD, power-ups beside board, coach card moved aside; board ~50% larger on 900x500."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Added 6 late-game mastery achievements (1024 tile, 20k score, x8 chain, Hardcore 2k, 10 puzzles, 12 three-star puzzles); puzzle wins now trigger achievement check; tests pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Wired ui-coin.png (owner-first, gen fallback) as coin burst particles on chain merges and board clear."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Owner board-bg.png (full scene) now aligned: slot grid mapped to board cells and clipped to glass panel; no more stretched scenery."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Share result button on game over (Web Share / clipboard, emoji tile bar); L.shareText tested."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Lifetime stats grid (runs, bests per mode, top tile, best chain, achievements) atop trophy panel; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle pack 4: 4 more par-9 solver-verified puzzles (28 total, scripts/puzzle-gen.js pack4); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle mode Hint button: solver-precomputed solution per puzzle (scripts/puzzle-solutions.js), highlights next column while on the optimal line, caps stars at 2; tests prove every sol."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Screen shake on chains/256+ merges (reduced-motion aware); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle mode lookahead: HUD plan line shows next 3 queued tiles (THEN ...); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Squash-and-stretch on tile landing (reduced-motion aware)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Ocean-theme store screenshot (shots.sh passes bestTile/theme); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Audit: tests + smoke pass; no code changes."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Ghost landing preview now shows value (merge result in gold) on the board."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Offline service worker (sw.js, network-first runtime cache) registered on http(s); shipped in www build."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Fix stale daily streak: menu now shows broken streak as 0 (liveStreak helper + test)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "HUD plan line declutter: dropped redundant COLUMN n text."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New-record pop animation on game-over chase line (reduced-motion aware)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Classic run resume (save on pause/hide, RESUME RUN button); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "STORE.md listing copy refreshed (modes, 28 puzzles, 21 achievements)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Confetti/coin burst on new record at game over (reduced-motion aware); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "NEW 64+ tile milestone banner (reuses chain banner) when a run first reaches a higher tile; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Headless-browser UI test (scripts/ui-test.js): menu, PLAY, tile drop, pause toggle, no page errors; in npm test."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Daily Puzzle label uses liveStreak so a broken streak no longer shows as active."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle pack 5: 2 more par-9 solver-verified levels (30 total); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Chain-scaled haptics: multi-chain merges buzz in escalating pattern; native MEDIUM impact tier."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Puzzle mastery achievements (Puzzle Master, Grandmaster) for the 30-level pack; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Danger top-row warning respects prefers-reduced-motion (steady tint, no pulse); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "3 more mastery achievements (Blitz 4k, Rise 3k, 7-day streak; 24 total); tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Tutorial coach now pulses the column that produces a merge (steps 1-2)."
+  }
+ ]
+}

@@ -1,0 +1,330 @@
+## Current task
+ status: DONE
+ agent: claude
+ game: stack-rush (ads adapter, done)
+ plan:
+ - [x] puzzle pack 5 (2 par-9 levels, 30 total)
+ - [x] solutions, tests, smoke, game.json
+
+## Session log
+- 2026-10-18 claude: Glitch Hop separate Music + Vibration toggles (save.nomusic/novib), www rebuilt; smoke OK, menu fits.
+- 2026-10-18 claude: Stack Rush consent-gated ads adapter (no free rewards on web), privacy.html, sw v4; tests + smoke pass.
+- 2026-10-18 claude: Skyline Sprint audio bus (compressor+reverb) and drum layers in music; tests + smoke pass.
+- 2026-10-18 claude: Pulse Run Endless mode (procedural, ramping, bot-verified generator, best score); tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop consent-gated ads adapter (ads.js, no free-ad fallback), ads-test, sw v4, www rebuilt; smoke OK.
+- 2026-10-18 claude: Orbit Hop settings panel (music/SFX/vibration toggles) + menu row fit; tests + smoke pass.
+- 2026-10-18 claude: Pulse Run settings panel (sfx/music/vibration toggles, persisted); tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop ads adapter (no free rewards on web, consent-gated interstitial); tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop owner btn-play + laser-gate PNGs wired (menu button, rotated emitter/beam gate); tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop real app icons from owner splash (icons/, resources/, manifest, sw v4, www rebuilt); tests + smoke pass.
+- 2026-10-18 claude: Skyline Sprint dedicated stage 7-8 backdrops (graded from owner stage 6, gen/), wired + sw v10; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop tutorial highlights merge-producing column; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop 3 more mastery achievements (24 total); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop danger warning respects reduced-motion; tests + smoke pass.
+- 2026-10-18 claude: Pulse Run app icons + manifest icons + Capacitor resources from owner art (art/make_icons.py); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop puzzle mastery achievements (all 30 solved, 25 three-starred); tests + smoke pass.
+- 2026-10-18 claude: Skyline Sprint stages 7-8 (Neon Core, Zenith), bot slack 0.15/0.10s monotonic; tests + smoke pass.
+- 2026-10-18 claude: Pulse Run stages 11-14 (speed 565-690) bot-verified clearable, monotonic difficulty; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop chain-scaled haptics (pattern by chain, native MEDIUM tier); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop puzzle pack 5: 2 par-9 solver-verified levels (30 total); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop daily-puzzle label shows live (not stale) streak; tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop test.js parallel worker-thread solver (was effectively hanging); 65 levels pass, smoke OK.
+- 2026-10-18 claude: Merge Drop 'NEW <tile>!' milestone banner on first 64+ tile per run; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop new-record confetti burst on game over (reduced-motion aware); tests + smoke pass.
+- 2026-10-18 claude: Pulse Run death juice (runner-hit pose, shake, flash, burst, delayed panel); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop STORE.md listing copy refreshed (all modes, 28 puzzles, 21 achievements); no code change.
+- 2026-10-18 claude: Glitch Hop shake/flash respect prefers-reduced-motion; syntax ok, smoke OK; test.js hangs (pre-existing, logic untouched).
+- 2026-10-18 claude: Merge Drop offline service worker (sw.js) + www build; tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop PB pace HUD relabeled ('PB in Xs' / 'PB missed +Xs'); test + smoke pass.
+- 2026-10-18 claude: Orbit Hop keyboard tutorial-dismiss fix, clearer fly-timeout death message, menu stats declutter; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop puzzle queue lookahead (THEN a b c in plan line); tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop fix input stuck on blur/pause + Glitch-mode skip save bug; syntax + smoke pass (solver test.js not rerun, logic untouched).
+- 2026-10-18 claude: Merge Drop screen shake on chains/big merges (reduced-motion aware); tests + smoke pass.
+- 2026-10-18 claude: Pulse Run new WebAudio engine (feedback.js: reverb SFX, adaptive speed-scaled music); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop puzzle Hint button (precomputed optimal lines, stars capped at 2); tests + smoke pass.
+- 2026-10-18 claude: Stack Rush owner PNGs wired (iso slabs, base, shards, fx ring, 5 bgs w/ parallax, UI button/coin/crown, Ocean theme); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop puzzle pack 4: 4 par-9 solver-verified levels (28 total); tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop new WebAudio engine (audio.js: reverb, combo-pitched SFX, adaptive music); tests + smoke pass.
+- 2026-10-18 claude: Pulse Run owner PNGs wired (bg-mid-buildings parallax, btn-jump/slide, fx-burst); tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop new WebAudio engine (audio.js, scheduled synthwave music, designed SFX); audio-test + smoke pass.
+- 2026-10-18 claude: Merge Drop lifetime stats grid in trophy panel; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop share-result button (Web Share/clipboard) on game over; tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop owner bg-stars + orbit-ring PNGs wired (owner-first, gen fallback, sw cache); tests + smoke pass.
+- 2026-10-18 claude: Pulse Run stages 7-10 + exhaustive-search difficulty bot (scripts/bot.js, all clearable, monotonic); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop 6 late-game mastery achievements + puzzle ach check; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop short-landscape layout (compact HUD, side power-ups, bigger board); smoke + tests pass.
+- 2026-10-18 claude: Merge Drop puzzle pack 3: 4 par-9 zero-slack solver-verified levels (24 total); tests pass.
+- 2026-10-18 claude: Merge Drop achievements store screenshot + shots.sh save args; theme shot skipped (theme not applied from injected save).
+- 2026-10-18 claude: Merge Drop Capacitor splash rebuilt full-bleed (art/make_resource_splash.py); assets/splash.png (owner-listed) left untouched.
+- 2026-10-18 claude: Glitch Hop real PNG art wired (art.js, tiles/player frames/bg/buttons, shape fallback), Capacitor www build, STORE.md, privacy.html, landscape screenshots; menu fits short screens.
+- 2026-10-18 claude: Merge Drop Hardcore mode (fast ramp, early stones, no undo, own best); bot shows ~35% shorter survival; tests pass.
+- 2026-10-18 claude: Orbit Hop real PNG art pack (planets, asteroids, black hole, comet skins, nebula bgs, explosion) generated + wired with owner-first loader and fallback; syntax + tests pass.
+- 2026-10-18 claude: Merge Drop Rise/Blitz/Puzzle store screenshots (scripts/shots.sh), puzzle grid overflow + menu bleed fixed; tests pass.
+- 2026-10-18 claude: Merge Drop privacy.html added + shipped in www build, STORE.md updated; tests pass.
+- 2026-10-18 claude: Merge Drop ads adapter src/ads.js (consent-gated, capped interstitial, earned-only rewarded revive, remove-ads flag); tests pass.
+- 2026-10-18 claude: Merge Drop puzzle pack 2: 8 expert solver-verified levels (par 7-8, zero slack), 20 puzzles total; tests pass.
+- 2026-10-18 claude: Merge Drop Puzzle mode: 12 solver-verified fixed-board levels, par/3-star scoring, unlock chain; tests pass.
+- 2026-10-18 claude: Merge Drop bot.js difficulty bot (random/greedy/planner, Classic+Rise) shows skill depth + ramp; GAME.md updated.
+- 2026-10-18 claude: Merge Drop settings panel with separate music/SFX volume sliders + persisted normalized prefs; tests pass.
+- 2026-10-18 claude: Merge Drop store screenshots (menu/run) added; menu HUD score bleed-through fixed; tests pass.
+- 2026-10-18 claude: Merge Drop overlay panels skinned with ui-panel PNG 9-slice card (owner-first); tests pass.
+- 2026-10-18 claude: Merge Drop fx-combo PNG wired as animated CHAIN xN banner; syntax + tests pass.
+- 2026-10-18 claude: Merge Drop real app icons (192/512/maskable/180/favicon) + Capacitor resources from generated art; tests pass.
+- 2026-10-18 claude: Merge Drop first-run 3-step coach + HUD declutter; tests pass.
+- 2026-10-18 claude: Merge Drop PNG power-up icons wired to buttons (owner-first fallback), Capacitor www build + package.json + STORE.md; tests pass.
+- 2026-10-18 claude: Merge Drop new WebAudio engine (reverb, value/chain-pitched merges, SFX set, adaptive chord music, danger heartbeat); tests + audio-test pass.
+- 2026-10-18 claude: Skyline Sprint fixed white-box alpha bug on shards/touch-button/FX PNGs (rsvg-convert), touch buttons resized; npm test passes.
+- 2026-10-18 claude: Skyline Sprint designed SFX (noise whoosh/crash, jump sweep, lane tick); npm test passes.
+- 2026-10-18 claude: Skyline Sprint stage intro banner naming new mechanic per stage; npm test passes.
+- 2026-10-18 claude: Skyline Sprint practice checkpoint (PRACTICE FROM 50% after fail, no saves); npm test passes.
+- 2026-10-18 claude: Skyline Sprint PERFECT timing rank on gates (label + recap count); npm test passes.
+- 2026-10-18 claude: Skyline Sprint screen shake juice (crash/clean gate, reduced-motion aware); npm test passes.
+- 2026-10-18 claude: Skyline Sprint streak-pitched clean SFX + shard chime; npm test passes.
+- 2026-10-18 claude: Skyline Sprint store screenshots (menu/briefing/how-to/run) captured to assets/store via headless Chrome; STORE.md updated.
+- 2026-10-18 claude: Skyline Sprint hazard sheet redrawn with shaded barrier + drone (art/hazards.py); tests pass.
+- 2026-10-18 claude: Skyline Sprint wall gates now use generated PNG sprite (wall-gate.png, owner-first loader, cached offline); tests pass.
+- 2026-10-18 claude: Skyline Sprint bot.js latency-bot proves every stage clearable and monotonically harder (slack 0.45s->0.20s); Overdrive spacing eased to 0.06s (slack 0.10s); npm test passes.
+- 2026-10-18 claude: Skyline Sprint runner art redrawn (art/runner.py): 6-frame sheet with jump/slide poses, cell-size-aware sprite sampling; tests pass.
+- 2026-10-18 claude: Skyline Sprint stages lengthened ~10s -> 30-60s with per-cycle lane rotation; tests pass.
+- 2026-10-18 claude: Skyline Sprint headless runtime smoke test (smoke.js, npm test) covering normal/daily/overdrive runs; passes.
+- 2026-10-18 claude: Skyline Sprint Capacitor packaging (package.json, www build, STORE.md listing/privacy); tests pass.
+- 2026-10-18 claude: Skyline Sprint gained procedural adaptive music loop (tempo/layers scale per stage); syntax and tests pass.
+- 2026-10-18 claude: Skyline Sprint solid WALL gates from stage 3/daily/overdrive force lane switching; tests pass.
+- 2026-10-18 claude: Skyline Sprint gates now block multiple lanes (no more lane-dodge bypass), lane cue fixed, [hidden] CSS fixed; tests pass.
+- 2026-10-18 codex: Skyline Sprint save writes now fail safely under restricted/full localStorage, recognized keyboard controls normalize case and suppress browser defaults; regression, syntax, JSON/config, 20-PNG, and HTTP 200 checks pass.
+- 2026-10-18 codex: Skyline Sprint startup crash fixed by normalizing bare-id selectors; 17-control/touch regression, syntax, JSON/config, 25-PNG, and HTTP 200 checks pass.
+- 2026-10-18 codex: Pulse Run cores now require airborne vertical contact; grounded and short-hop overlaps miss, full jumps collect aligned cores; pure/runtime regression, syntax, JSON, PNG, and HTTP checks pass.
+- 2026-10-18 codex: Pulse Run fixed out-of-scope readArray ReferenceError affecting stage mastery/PB HUD callbacks, added six-frame grounded runner animation, and added regression coverage for save recovery/progression/resume/frame wiring; syntax, JSON, valid-PNG, and HTTP 200 checks pass.
+- 2026-10-18 codex: Skyline Sprint gained generated fallback PNGs for perspective lane floor, shards, clean-gate FX, touch controls, and store feature art; owner-first loaders, gameplay rendering, touch-button wiring, regeneration source, offline cache coverage, visual inspection, syntax/JSON/PNG/HTTP checks pass.
+- 2026-10-18 codex: Pulse Run gained generated local PNG art pack with six district backdrops, runner poses, ground, hazards, cores, controls, checkpoint, reactor, icon, splash, and store feature; owner-art priority plus generated fallback loader, regeneration script, offline cache coverage, syntax/JSON/PNG/HTTP checks pass.
+- 2026-10-18 codex: Skyline Sprint gained first-run controls briefing and reusable HOW TO PLAY panel covering lane choice, JUMP/SLIDE matching, timing HUD, shards, and medal mastery; completion persists in normalized local save; syntax/JSON/HTTP/assets checks pass.
+- 2026-10-18 codex: Skyline Sprint gained optional one-use rewarded revive hook via Promise<boolean> SkylineAds.showRewarded('skyline-revive'); failed runs can continue from current distance after nearby gates clear, button stays hidden without native bridge, syntax/JSON/PNG/HTTP checks pass.
+- 2026-10-18 codex: Skyline Sprint now has persistent earned runner skins: AQUA/SUNSET/GOLD unlock across normal clears, VOID unlocks from Summit Overdrive, menu cycles owned skins, malformed selections fall back to NEON, and runner PNGs receive cosmetic hue treatments; syntax, JSON, PNG, and HTTP 200 checks pass.
+- 2026-10-18 codex: Skyline Sprint owner-supplied runner and hazard PNGs now preserve source aspect ratios with bottom anchoring; generated fallbacks stay unchanged; syntax, JSON, PNG inspection, and HTTP 200 checks pass.
+- 2026-10-18 codex: Skyline Sprint now prioritizes owner-supplied runner, jump, slide, barrier, and drone PNGs with generated-sheet fallbacks; syntax, JSON, PNG inventory, asset wiring, and HTTP entry checks pass.
+- 2026-10-18 codex: Skyline Sprint menu now previews selected stage target, spacing pressure, gate count, lane changes, shard count, action route, and remaining medal goals; stage selector aria-label mirrors progress; syntax, JSON, PNG visual, and HTTP entry checks pass.
+- 2026-10-18 codex: Skyline Sprint menu now selects any unlocked stage with bounded previous/next controls, enabling earlier-stage medal and flawless mastery replay; syntax, JSON, wiring, PNG visual, and HTTP entry checks pass; readiness 90->92.
+- 2026-10-18 codex: Skyline Sprint Summit Overdrive now uses separate 12-gate authored route with 11 lane/action reversals, preserving isolated score/progression; syntax, JSON, route-shape, PNG visual, and HTTP entry checks pass; readiness 88->90.
+- 2026-10-18 codex: Skyline Sprint gained unlocked Summit Overdrive after six normal clears: Summit runs 12% faster with 0.10s tighter gate spacing, separate best score, and isolated medals/achievements/streak/progression; syntax, JSON, PNG asset, and HTTP entry/cache checks pass; readiness 86->88.
+- 2026-10-18 codex: Skyline Sprint now shows persistent LEFT/CENTER/RIGHT lane state during runs and repeats lane plus upcoming gate action in pause recap; lane changes announce once without per-frame live-region spam; syntax, JSON, PNG asset, and HTTP entry checks pass; readiness 84->86.
+- 2026-10-18 codex: Skyline Sprint now has six persistent skill achievements (normal clear, Summit, shards, flawless gates, eight clean gates, Daily clear), corruption-safe save normalization, clear recap unlock feedback, and menu progress/listing; syntax, JSON, and HTTP shell checks pass; readiness 82->84.
+- 2026-10-18 codex: Skyline Sprint now uses owner/generated runner and hazard PNG sprites as primary visuals, with geometric silhouettes only as image-load fallback; syntax, JSON, asset, visual, and HTTP entry checks pass; readiness 80->82.
+- 2026-10-18 codex: Skyline Sprint now uses six stage-specific generated skyline PNG fallbacks with owner-art priority, stage-aware loading, regeneration source, and offline cache coverage; syntax, JSON, asset, visual, and HTTP checks pass; readiness 78->80.
+- 2026-10-18 codex: Skyline Sprint now renders generated skyline PNG background during gameplay with subtle distance-driven drift behind lane geometry; syntax, JSON, asset, and HTTP entry checks pass; readiness 76->78.
+- 2026-10-18 codex: Skyline Sprint gained coherent generated neon PNG art: skyline background, four-frame runner, jump barrier, drone hazard, app icon, and splash; SVG regeneration source, runtime sprite wiring, manifest icon, and offline cache coverage added; syntax, asset, visual, and HTTP entry checks pass; readiness 72->76.
+- 2026-10-18 codex: Skyline Sprint now auto-pauses active runs on visibility change for mobile app/tab switching; resume resets frame timing so hidden time cannot advance physics; syntax, JSON, wiring, and HTTP entry checks pass; readiness 70->72.
+- 2026-10-18 codex: Skyline Sprint gained actionable upcoming-gate HUD guidance across all lanes: NEXT/NOW urgency, LEFT/CENTER/RIGHT direction, jump/slide action, shard marker, and change-only live announcements; physics unchanged; syntax, JSON, cue cases, entry refs, and HTTP entry pass; readiness 68->70.
+- 2026-10-18 codex: Skyline Sprint gained persistent normal best clean streak with live HUD, pause recap, and clear/failure recap; failed gate resets current streak and Daily Run stays isolated; syntax, JSON, HTTP entry, and focused wiring checks pass; readiness 66->68.
+- 2026-10-18 codex: Skyline Sprint gained persistent 0-3 normal-stage medals for clear, shard collection, and flawless gate execution; menu/clear mastery feedback added; syntax, JSON, HTTP entry, medal wiring, and difficulty checks pass; readiness 62->66.
+- 2026-10-18 codex: Skyline Sprint gained local WebAudio action/clean/failure/clear cues with gesture-safe unlock and persistent SOUND ON/OFF toggle; syntax, JSON, HTTP entry, and difficulty checks pass; readiness 59->62.
+- 2026-10-18 codex: Skyline Sprint gained clean-gate feedback with CLEAN JUMP/CLEAN SLIDE cues, local particle bursts, one live announcement per successful crossing, and optional brief vibration; syntax, JSON, difficulty, and HTTP entry checks pass; readiness 56->59.
+- 2026-10-18 codex: Skyline Sprint replaced repeated global hazard loop with six authored eight-gate pattern families, stage-specific lane rhythms, and date-seeded daily rotation; syntax, HTTP entry, pattern-shape, and difficulty checks pass; readiness 53->56.
+- 2026-10-18 codex: Skyline Sprint gained date-seeded Daily Run with rotated hazard lanes, tighter spacing, separate daily best, isolated progression, and menu/HUD/pause/retry labels; syntax, JSON, HTTP entry, wiring, seed, isolation, and difficulty checks pass; readiness 48->53.
+- 2026-10-18 codex: Skyline Sprint gained visible in-run mobile pause button with safe-area HUD styling and focus handoff to resume; syntax, metadata, entry, and cache checks pass; readiness 45->48.
+- 2026-10-18 codex: Created Skyline Sprint, a six-stage precision auto-runner with deterministic escalating hazards, lane/jump/slide controls, local progression, pause/resume, touch+keyboard accessibility, responsive HUD, Capacitor shell, and cache-first offline shell; syntax, JSON, entry, asset, HTTP shell, and difficulty checks pass; browser runtime unavailable.
+- 2026-10-18 codex: Stack Rush keyboard focus now follows active menu, gameplay canvas, pause, continue, and game-over surfaces; hidden overlay actions no longer retain focus; syntax, logic, difficulty, metadata, entry, and accessibility wiring checks pass; readiness 98->99.
+- 2026-10-18 codex: Glitch Hop now moves keyboard focus to actionable controls when menu, level select, pause, achievements, or clear overlays open; gameplay resume returns focus to pause; syntax, accessibility wiring, metadata, entry, and all 65-level bot regression pass; readiness 98->99.
+- 2026-10-18 codex: Pulse Run hazard and PB-pace screen-reader announcements now update only on action/urgency or pace-state changes; exact visual HUD remains live; syntax, logic, difficulty, metadata, entry, and accessibility wiring checks pass; readiness 98->99.
+- 2026-10-18 codex: Orbit Hop visual HUD now stays frame-accurate while a separate polite live region announces only planet/phase/shield/laser/hazard/aim/combo changes; countdown and aim-angle frame spam removed; syntax, full hazard and difficulty regression, metadata, entry, and accessibility wiring checks pass; readiness 98->99.
+
+
+
+
+
+
+
+- 2026-10-18 codex: Stack Rush timing cue now updates aria-live only when cue label changes, preventing per-frame screen-reader spam; syntax, unit, difficulty, metadata, entry, cache, and accessibility wiring checks pass; readiness 97->98.
+- 2026-10-18 codex: Glitch Hop now registers HTTP(S)-only cache-first service worker for offline shell relaunch; direct file opening remains supported; syntax, metadata, entry, cache coverage, and all 65-level bot regression pass; readiness 97->98.
+- 2026-10-18 codex: Orbit Hop now registers HTTP(S)-only cache-first service worker for offline shell relaunch; direct file opening remains supported; syntax, full logic, metadata, entry, and cache coverage checks pass; readiness 97->98.
+- 2026-10-18 codex: Pulse Run now registers HTTP(S)-only cache-first service worker for offline shell relaunch; direct file opening remains supported; syntax, difficulty, metadata, entry, and cache coverage checks pass; readiness 97->98.
+- 2026-10-18 codex: Merge Drop now auto-focuses board after run start or board touch, completing keyboard handoff for column navigation, Enter/Space drop, and Escape pause; syntax, logic, Rise difficulty, metadata, entry, and accessibility wiring checks pass; readiness 98->99.
+- 2026-10-18 codex: Glitch Hop now announces level, pause/resume, checkpoint, death coaching, and clear recap through a screen-reader live region; touch and pause controls expose pressed state; syntax, metadata, entry, accessibility wiring, and all 65-level bot regression pass; readiness 96->97.
+- 2026-10-18 codex: Stack Rush now exposes semantic canvas instructions, visible keyboard focus, and compact short-portrait HUD rules; gameplay unchanged; syntax, full logic/difficulty simulation, metadata, and entry checks pass; readiness 96->97.
+- 2026-10-18 codex: Orbit Hop now labels canvas and icon-only controls for assistive technology and exposes visible keyboard focus; gameplay unchanged; syntax, full logic/difficulty regression, metadata, and entry checks pass; readiness 96->97.
+- 2026-10-18 codex: Pulse Run valid saved-run resume fixed; normalized vertical position no longer throws and silently rejects RESUME; syntax, resume normalization, difficulty, metadata/config, and entry checks pass; readiness 96->97.
+- 2026-10-18 codex: Merge Drop pause recap now reads true top-row occupancy and shows exact Blitz seconds remaining; syntax, logic, difficulty, metadata, entry, and wiring checks pass; readiness 96->97.
+- 2026-10-18 codex: Glitch Hop mastery HUD and pause recap now show exact seconds to par, with explicit time-star-missed feedback while coins remain; pure helper tests, syntax, entry/config, and all 65-level bot regression pass; readiness 95->96.
+- 2026-10-18 codex: Stack Rush now registers local cache-first service worker for offline web relaunch; direct file opening remains supported; syntax, logic, difficulty, metadata, and cache-coverage checks pass; readiness 95->96.
+- 2026-10-18 codex: Orbit Hop pause recap now shows ORBIT/FLIGHT phase and exact immediate laser state/countdown, sourced from pure gate logic; syntax, pause-state, full hazard, and difficulty checks pass; readiness 95->96.
+- 2026-10-18 codex: Stack Rush pause panel now shows exact mode, score, PB chase, mastery goal, perfect rate, streak, and combo before mobile resume/menu choice; syntax, logic, difficulty, metadata, and entry checks pass; readiness 94->95.
+- 2026-10-18 codex: Pulse Run pause panel now hides RETRY CHECKPOINT until 50% progress unlocks a checkpoint, preventing pre-checkpoint taps from silently restarting the stage; syntax, logic, difficulty, entry, and metadata checks pass; readiness 95->96.
+- 2026-10-18 codex: Merge Drop pause overlay now shows exact mode, score, drops, top tile, best chain, next tile, mastery progress, and top-row occupancy for informed mobile resume; syntax, save-recovery, logic, Rise difficulty, metadata/config, and entry checks pass; readiness 95->96.
+- 2026-10-18 codex: Glitch Hop pause overlay now shows exact mode, level, progress, elapsed time, coins, deaths, checkpoint, and next-star goal for informed mobile resume/restart; syntax, metadata/config, entry, and all 65-level bot regression pass; readiness 94->95.
+- 2026-10-18 codex: Orbit Hop pause overlay now shows exact mode, score, planet, combo, shield state, next planet, and immediate hazards; syntax, full logic/difficulty, metadata/config, entry, and wiring checks pass; readiness 94->95.
+- 2026-10-18 codex: Stack Rush menu, pause, continue, and game-over panels now use safe-area padding plus touch scrolling; short portrait screens keep actions reachable; syntax, logic, difficulty, metadata/config, and responsive checks pass; readiness 93->94.
+- 2026-10-18 codex: Pulse Run stage-select, pause, and result panels now use safe-area padding plus touch scrolling; short portrait screens keep stage buttons and retry/menu actions reachable; syntax, responsive wiring, JSON, and entry checks pass; readiness 94->95.
+- 2026-10-18 codex: Merge Drop achievement, pause, continue, and game-over panels now use safe-area padding plus touch scrolling; short portrait screens keep long recaps and actions reachable; logic, save-recovery, syntax, metadata/config, entry, and Rise difficulty checks pass; readiness 94->95.
+- 2026-10-18 codex: Glitch Hop now normalizes malformed localStorage root, level records, Glitch records, daily fields, skin index, counters, achievement flags, and tutorial flags before renderer reads; corruption fixtures, syntax, entry/config, and all 65-level bot regression pass; readiness 93->94.
+- 2026-10-18 codex: Orbit Hop now normalizes malformed localStorage root, daily, mission, achievement, owned-skin, depth, and last-run fields before menu/gameplay reads; save recovery, syntax, JSON/config, and full hazard/difficulty regression pass; readiness 93->94.
+- 2026-10-18 codex: Pulse Run now reflows narrow-portrait HUD into two readable rows and labels touch controls JUMP/SLIDE; gameplay unchanged; syntax, logic, JSON/config, difficulty, and responsive wiring checks pass; readiness 93->94.
+- 2026-10-18 codex: Merge Drop now normalizes malformed localStorage root, nested Daily, counter, theme, achievement, and last-run fields before menu/gameplay reads; logic, corruption-recovery, syntax, and entry/config checks pass; readiness 93->94.
+- 2026-10-18 codex: Pulse Run now rejects or normalizes malformed pulseResume fields before menu/resume use; syntax, six-stage difficulty, corruption-recovery VM, JSON, and entry/config checks pass; readiness 92->93.
+- 2026-10-18 codex: Pulse Run now survives malformed or non-array pulseStars/pulseTimes browser saves via defensive parsing; syntax, save-recovery, six-stage difficulty, JSON, and entry/config checks pass; readiness 91->92.
+- 2026-10-18 codex: Pulse Run gained successful hazard-clearance feedback with CLEAN JUMP/CLEAN SLIDE cue, optional tone/haptic, and pink particle burst; syntax, pure-helper, six-stage difficulty, JSON, and entry-asset checks pass; readiness 90->91.
+- 2026-10-18 codex: Pulse Run gained live saved-PB pace feedback showing AHEAD, BEHIND, PB PACE, or PB -- during replay; syntax, pure-helper, six-stage difficulty, JSON, and metadata checks pass; readiness 89->90.
+- 2026-10-18 codex: Pulse Run gained visual accessible stage-progress meter synchronized to exact run distance; JS syntax, wiring, JSON, and six-stage difficulty checks pass; readiness 88->89.
+- 2026-10-18 codex: Pulse Run pause overlay now shows exact stage, progress, elapsed time, collected cores, checkpoint readiness, and saved state; pure pause-summary, syntax, metadata, and six-stage difficulty checks pass; readiness 87->88.
+- 2026-10-18 codex: Pulse Run now auto-pauses and saves active runs on tab/app backgrounding, preserving mobile timing; JS syntax, metadata, and pause/save wiring checks pass; readiness 86->87.
+- 2026-10-18 codex: Pulse Run gained first-run control onboarding for jump, slide, and variable jump height; input dismisses prompt, local flag prevents repeat; syntax, JSON, and wiring checks pass; readiness 85->86.
+- 2026-10-18 codex: Pulse Run gained short-lived local canvas particle bursts on jump launches and pulse-core pickups; syntax, JSON, feedback wiring, and six-stage difficulty checks pass; readiness 84->85.
+- 2026-10-18 codex: Pulse Run gained variable jump height with full/short hop arcs, touch/keyboard release and blur cleanup; syntax, JSON, and focused movement wiring checks pass; readiness 82->84.
+- 2026-10-18 codex: Pulse Run next-action HUD now shows FAR/READY/NOW urgency bands from exact hazard distance, with touch-readable color states; syntax, pure threshold, and six-stage cue checks pass; readiness 81->82.
+- 2026-10-18 codex: Pulse Run now persists cleared-stage unlocks and guides nearest uncollected core using exact run position; legacy resume coin saves normalize; syntax, JSON, and six-stage cue/progress regression pass; readiness 79->81.
+- 2026-10-18 codex: Pulse Run stage select now highlights first unfinished mastery target with remaining cores plus PB/PAR target; syntax, pure helper, UI wiring, and JSON checks pass; readiness 78->79.
+- 2026-10-18 codex: Pulse Run mobile HUD pause button now receives touch input despite HUD pass-through; slide releases on pointer cancel/leave; syntax and focused touch-wiring checks pass; readiness 77->78.
+- 2026-10-18 codex: Pulse Run pause-menu MENU now clears abandoned resume state while browser exit still saves; syntax, cleanup wiring, and metadata checks pass; readiness 76->77.
+- 2026-10-18 codex: Pulse Run stage select now gates unreached stages while keeping next stage playable; locked labels plus direct-start/resume guards added; syntax, unlock helper, JSON, and six-stage difficulty checks pass; readiness 74->76.
+- 2026-10-18 codex: Pulse Run gained shared optional WebAudio and Capacitor/fallback haptics for jump, core, death, and stage-clear events; syntax, fallback, six-stage difficulty, and JSON checks pass; readiness 71->74.
+- 2026-10-18 codex: Pulse Run gained cause-specific death retry coaching for gaps, low barriers, and high barriers; pure helper, syntax, and six-stage difficulty checks pass; readiness 68->71.
+- 2026-10-18 codex: Pulse Run gained live next-hazard HUD cue with pure jump/slide/core action-distance helper; syntax, pure cue mapping, six-stage structure, and JSON checks pass; readiness 65->68.
+- 2026-10-18 codex: Pulse Run gained 120ms jump buffering and 100ms coyote time for forgiving touch timing; pure jump-assist, syntax, and six-stage difficulty checks pass; readiness 62->65.
+- 2026-10-18 codex: Pulse Run gained accessible stage-clear mastery recap: missing cores, exact PAR/PB replay guidance, next-stage PAR, and final 3-star goal; syntax, pure helper, JSON, and difficulty checks pass; readiness 59->62.
+- 2026-10-18 codex: Pulse Run gained persistent mid-stage resume: pause/browser-exit saves stage position, timer, cores, and checkpoint; validated menu recovery clears stale terminal saves; syntax, pure logic, wiring, JSON, and difficulty checks pass; readiness 55->59.
+- 2026-10-18 codex: Pulse Run gained live timers, per-stage speedrun PBs, generated par targets, clear-time comparison, and stage-select PB display; syntax, pure mastery, JSON, and difficulty checks pass; readiness 48->55.
+- 2026-10-18 codex: Pulse Run gained pause/resume plus 50% checkpoint retry preserving collected cores; syntax, pure checkpoint, and progression checks pass; readiness 42->48.
+- 2026-10-18 codex: Created Pulse Run, a six-stage neon precision auto-runner with jump/slide touch controls, local star progression, stage select, escalating speed/hazard spacing, pure collision/progression helpers, and Capacitor-ready shell; syntax, logic, and difficulty checks pass; readiness 42, market 61.
+- 2026-10-18 codex: Glitch Hop now gives cause-specific death coaching after instant respawn for spikes, ceilings, saws, pits, and phase crushes; pure tip tests, syntax, and all 65-level bot regression pass; readiness 92->93.
+- 2026-10-18 codex: Stack Rush now announces post-drop outcome with perfect full-width, retained-width grade/percentage, or miss recovery feedback; pure helper, syntax, unit, and difficulty simulations pass; readiness 91->92.
+- 2026-10-18 codex: Orbit Hop HUD now explicitly shows FLIGHT TO target after launch via shared ORBIT/FLIGHT/OVER pure phase helper; syntax, pure logic, and full difficulty regression pass; readiness 92->93.
+- 2026-10-18 codex: Merge Drop planning HUD now flags legal drops that immediately end run using shared pure preview; syntax, full logic, and difficulty simulation pass; readiness 92->93.
+- 2026-10-18 codex: Stack Rush miss cue now gives directional MOVE LEFT/RIGHT guidance; pure cue tests, syntax, and difficulty simulations pass; readiness 90->91.
+- 2026-10-18 codex: glitch-hop normal clear screen now shows actionable next-star goal or MASTERED state; pure helper tests, syntax, and all 65-level bot regression pass; readiness 91->92.
+- 2026-10-18 codex: orbit-hop immediate next-segment hazard preview now shows generated black holes, asteroids, and lasers in live HUD; pure helper, syntax, full logic, and difficulty simulations pass; readiness 91->92.
+- 2026-10-18 codex: Stack Rush Daily PB reset now occurs before game-over record feedback; yesterday's score cannot contaminate new-day chase text; pure helper, syntax, and difficulty simulations pass; readiness 89->90.
+- 2026-10-18 codex: merge-drop Undo now refreshes live tile-mastery goal HUD after restoring earlier board state; syntax and full logic suite pass; readiness 91->92.
+- 2026-10-18 codex: glitch-hop Glitch clears no longer write first normal-mode records; hard mode stays isolated to time/death mastery saves; syntax and all 65-level bot regression pass; readiness 90->91.
+- 2026-10-18 codex: orbit-hop exploration depth records now scoped by Orbit/Hard/Daily with legacy-save migration and mode-labeled recap/menu feedback; syntax, full logic/difficulty suite, and JSON checks pass; readiness 90->91.
+- 2026-10-18 codex: glitch-hop Daily clears no longer contaminate normal stars/coins/PBs/death records/flawless totals; syntax and all 65-level bot regression pass; readiness 89->90.
+- 2026-10-18 codex: merge-drop Daily record chase/menu display now date-scoped; yesterday's score no longer contaminates new-day feedback; pure helper, syntax, and logic checks pass; readiness 90->91.
+- 2026-10-18 codex: orbit-hop panels now use viewport-bounded touch scrolling with safe-area padding; long game-over recap keeps retry/menu reachable; syntax, full logic/difficulty suite, metadata, and CSS checks pass; readiness 89->90.
+- 2026-10-18 codex: stack-rush rewarded-continue panel now shows exact mode PB gap and next mastery-goal distance; pure helper, syntax, unit, and difficulty simulations pass; readiness 87->88.
+- 2026-10-18 codex: glitch-hop separate Glitch-mode fastest-time and lowest-death records across HUD, level select, and clear screen; legacy hard saves remain compatible; syntax and all 65-level bot regression pass; readiness 88->89.
+- 2026-10-18 codex: merge-drop exact pre-update mode-record chase feedback on game-over, including points needed and new-record margin; pure helper, syntax, logic, and JSON checks pass; readiness 89->90.
+- 2026-10-18 codex: orbit-hop persistent last-run recap across game-over and menu with mode, score, depth, stars, combo, and close-call feedback; syntax and full logic/difficulty suite pass; readiness 88->89.
+- 2026-10-18 codex: stack-rush perfect-streak mastery feedback across live HUD, run/menu summaries, and lifetime stats; pure helper, syntax, unit, and difficulty simulations pass; readiness 86->87.
+- 2026-10-18 codex: glitch-hop checkpoint reached/total HUD for normal runs, hidden in Glitch mode; pure helper tests, syntax, and all 65-level bot regression pass; readiness 87->88.
+- 2026-10-18 codex: merge-drop persistent Classic/Rise/Blitz/Daily records and last-run menu recap with score, drops, tile, chain, and record-chase feedback; syntax and logic suite pass; readiness 88->89.
+- 2026-10-18 codex: stack-rush perfect-drop rate feedback in live HUD, menu, and game-over summaries; pure helper, syntax, unit, metadata, and difficulty checks pass; readiness 85->86.
+- 2026-10-18 codex: stack-rush persistent last-run menu feedback with mode score/perfect/combo and record-chase context; syntax, logic, and difficulty checks pass; readiness 84->85.
+- 2026-10-18 codex: merge-drop game-over run summary for drops, best chain, and reached level; pure state, undo, syntax, JSON, and logic suite pass; readiness 87->88.
+- 2026-10-18 codex: orbit-hop cause-specific game-over retry tips for laser, asteroid, black-hole, collapse, and miss deaths; syntax, JSON, and full logic/difficulty suite pass; readiness 86->87.
+- 2026-10-18 codex: glitch-hop live next-star goal HUD for coin collection, par-time pace, and missed time-star feedback; pure helper tests, syntax, JSON, and all 65-level bot regression pass; readiness 85->86.
+- 2026-10-18 codex: merge-drop live tile-mastery goal HUD, pure next-goal helper, near-target emphasis, and post-run remaining feedback; syntax and logic suite pass; readiness 86->87.
+- 2026-10-18 codex: glitch-hop persistent lowest-death mastery records, level-select death feedback, and clear-screen death-record badge; syntax, JSON, and all 65-level bot regression pass; readiness 84->85.
+- 2026-10-18 codex: stack-rush live timing cue shows exact-perfect, survivable-overlap, or move-in states from shared pure logic; syntax, unit, and difficulty simulations pass; readiness 82->83.
+- 2026-10-18 codex: orbit-hop next-target aim guidance with signed pure helper, AIM READY HUD, and visual target ring/launch line; syntax, logic, hazard, and difficulty checks pass; readiness 84->85.
+- 2026-10-18 codex: merge-drop exact pre-drop merge/chain preview in planning HUD and ghost target; logic preview purity, full suite, and syntax checks pass; readiness 85->86.
+- 2026-10-18 codex: stack-rush shared-logic gold perfect-landing band teaches timing and narrows with difficulty; syntax/unit/difficulty checks pass; readiness 81->82.
+- 2026-10-18 codex: merge-drop touch-synced planning HUD shows next tile, selected/full column, merge-ready state, and blast mode; labeled power-up controls; syntax/logic/difficulty checks pass; readiness 84->85.
+- 2026-10-18 codex: stack-rush mode-aware mastery goal chase HUD and game-over next-target feedback; syntax/tests/sim pass; readiness 80->81.
+- 2026-10-18 codex: stack-rush trim grades (CLOSE/CLEAN/RISKY) give width-retention feedback after non-perfect drops; syntax/tests/sim pass; readiness 79->80.
+- 2026-10-18 codex: stack-rush mode-aware personal-best chase HUD with drops-to-beat and new-record highlight; tests/sim pass; readiness 78->79.
+- 2026-10-18 codex: glitch-hop one-tap touch restart HUD control; all 65 levels bot-solvable; readiness 79->80.
+- 2026-10-17 claude: created orbit-hop (one-tap orbit arcade, readiness 45, market 58).
+- 2026-10-17 claude: orbit-hop hazards (black holes, collapsing planets), daily mode, ambient music; readiness 45→52.
+- 2026-10-17 claude: orbit-hop missions system (src/missions.js + UI); readiness 52→56.
+- 2026-10-17 claude: orbit-hop icon, splash, manifest; readiness 56→60.
+- 2026-10-17 claude: orbit-hop endless generated missions; readiness 60→61.
+- 2026-10-17 claude: orbit-hop haptics bridge; readiness 61→62.
+- 2026-10-17 claude: created stack-rush (stacker hyper-casual, readiness 35, market 50).
+- 2026-10-17 claude: stack-rush themes+coins, tutorial hint, parallax stars; readiness 35→42.
+- 2026-10-17 claude: stack-rush icon/splash + rewarded continue; readiness 42→48.
+- 2026-10-17 claude: stack-rush music, pentatonic combo notes, interstitial hook; readiness 48→51.
+- 2026-10-17 claude: stack-rush juice (shockwave, flash, milestones); readiness 51→54.
+- 2026-10-17 claude: created merge-drop (drop-merge puzzle, readiness 35, market 62).
+- 2026-10-17 claude: merge-drop power-ups (bomb, swap) + tutorial hint; readiness 35→42.
+- 2026-10-17 claude: merge-drop daily challenge (seeded, streak); readiness 42→47.
+- 2026-10-17 claude: merge-drop pause + floating score text; readiness 47→51.
+- 2026-10-17 claude: merge-drop board-clear bonus, danger pulse, tile gloss; readiness 51→55.
+- 2026-10-17 claude: merge-drop fall animation, best-tile stat, interstitial hook; readiness 55→58.
+- 2026-10-17 claude: merge-drop ambient music + unlockable themes; readiness 58→61.
+- 2026-10-17 claude: merge-drop ghost landing preview + balance sim; readiness 61→64.
+- 2026-10-17 claude: stack-rush pause + alternating entry + block gloss; readiness 54→58.
+- 2026-10-17 claude: merge-drop haptics bridge + toggle; readiness 64→66.
+- 2026-10-17 claude: orbit-hop mission claim animation; readiness 62→63.
+- 2026-10-17 claude: orbit-hop pause + OrbitAds rewarded/interstitial hooks; readiness 63→66.
+- 2026-10-17 claude: merge-drop achievements (8, panel + toasts); readiness 66→69.
+- 2026-10-17 claude: stack-rush daily reward streak + rewarded double coins; readiness 58→61.
+- 2026-10-17 claude: orbit-hop rewarded continue/revive + logic test; readiness 66→69.
+- 2026-10-17 claude: stack-rush achievements (6, toasts, coins) + haptics bridge; readiness 61→64.
+- 2026-10-17 claude: merge-drop difficulty ramp (levels, stone tiles); readiness 69→72.
+- 2026-10-17 claude: stack-rush difficulty ramp (speed cap 4.2, shrinking perfect window, sim bot); readiness 64→66.
+- 2026-10-17 claude: created glitch-hop (precision platformer, 10 bot-verified levels, readiness 38, market 56).
+- 2026-10-17 claude: glitch-hop world 2 (crumble blocks, 5 bot-verified levels); readiness 38→46.
+- 2026-10-17 claude: glitch-hop one-time tutorial hints; readiness 46→49.
+- 2026-10-17 claude: glitch-hop coin-unlocked skins; readiness 49→52.
+- 2026-10-17 claude: glitch-hop world 3 (phase blocks, 5 bot-verified levels); readiness 52→56.
+- 2026-10-17 claude: glitch-hop daily challenge (seeded Glitch-mode level, streak); readiness 56→59.
+- 2026-10-17 claude: glitch-hop world 4 Remix (5 bot-verified mixed-mechanic hard levels, 25 total); readiness 59→62.
+- 2026-10-17 claude: glitch-hop Vertigo saws added (bot-verified solvable, par 50s); readiness 62→63.
+- 2026-10-18 claude: glitch-hop world 5 Belts (conveyor blocks, 5 bot-verified levels, 30 total); readiness 63->65.
+- 2026-10-18 claude: glitch-hop world 6 Ice (slippery ice blocks, 5 bot-verified levels, 35 total); readiness 65->67.
+- 2026-10-18 claude: glitch-hop world 7 Wind (up/downdraft zones, 5 bot-verified levels, 40 total) + fixed levels6 global-name bug; readiness 67->69.
+- 2026-10-18 claude: glitch-hop world 8 Gauntlet (5 hard bot-verified mixed levels, 45 total); readiness 69->70.
+- 2026-10-18 claude: orbit-hop patrolling asteroids (planet 28+, bot-verified); readiness 69->71.
+- 2026-10-18 claude: merge-drop Rise hard mode (rising junk rows, sim 82→33 drops); readiness 72->75.
+- 2026-10-18 claude: stack-rush Hard mode (narrow, no regrow, faster, sim-verified harder); readiness 66->69.
+- 2026-10-18 claude: orbit-hop achievements (11, panel, unlock anim, tested); readiness 71->73.
+- 2026-10-18 claude: glitch-hop world 9 Elevators (one-way moving platforms, 5 bot-verified levels, 50 total); readiness 70->72.
+- 2026-10-18 claude: orbit-hop Hard mode (unlock at 25, +30 difficulty offset, bot avg 68→26); readiness 73->75.
+- 2026-10-18 claude: glitch-hop achievements (12, panel, toasts, tested); readiness 72->74.
+- 2026-10-18 claude: merge-drop +6 achievements (14 total, level/bomb/Rise/daily goals); readiness 75->77.
+- 2026-10-18 claude: stack-rush Daily Challenge (5 rotating modifiers, streak bonus, sim-verified harder); readiness 69->72.
+- 2026-10-18 claude: glitch-hop world 10 Overdrive (5 bot-verified hard moving-platform mixes, 55 total); readiness 74->75.
+- 2026-10-18 claude: orbit-hop flipper planets (spin reverses) + close-call bonus, tested; readiness 75->77.
+- 2026-10-18 claude: merge-drop undo (1/run, not Daily, RNG-exact, tested); readiness 77->79.
+- 2026-10-18 claude: stack-rush Surge mechanic (speed warp late game, tested, sim 80→62 skilled avg); readiness 72->74.
+- 2026-10-18 claude: stack-rush Surge mechanic (speed warp late game, tested, sim 80->62 skilled avg); readiness 72->74.
+- 2026-10-18 claude: glitch-hop world 11 Dash (air dash mechanic, 5 bot-verified levels, 60 total); readiness 75->77.
+- 2026-10-18 claude: orbit-hop laser gates (timed beams, bot-verified skill-gated); readiness 77->79.
+- 2026-10-18 claude: merge-drop Blitz mode (60s timer, chain time bonus, +achievement); readiness 79->81.
+- 2026-10-18 claude: stack-rush +6 mastery achievements (hard/daily/combo/score, tested); readiness 74->76.
+- 2026-10-18 claude: glitch-hop world 12 Dash Remix (5 hard bot-verified dash levels, all beam 400, 65 total); readiness 77->78.
+- 2026-10-18 claude: orbit-hop shield orb pickup (absorbs one hazard hit, bot-tested); readiness 79->80.
+- 2026-10-18 claude: glitch-hop level select grouped by 12 worlds + star totals + scroll fix; readiness 78->79.
+- 2026-10-18 codex: merge-drop bomb tap crash fixed; logic suite and syntax checks pass; readiness 81->82.
+- 2026-10-18 codex: glitch-hop independent best times, level-select timing feedback, new-record clear badge; syntax and logic checks pass; readiness 80->81.
+- 2026-10-18 codex: stack-rush persistent mastery stats and mode-aware run summary; tests, syntax, and difficulty simulation pass; readiness 76->77.
+- 2026-10-18 codex: merge-drop normal-drop Undo fixed by storing pre-drop snapshot; logic suite and syntax checks pass; readiness 82->83.
+- 2026-10-18 codex: orbit-hop daily streaks with consecutive-day logic, same-day guard, menu/game-over feedback, pure tests; readiness 80->81.
+- 2026-10-18 codex: stack-rush live run HUD with mode label and combo counter; node checks, logic suite, and difficulty simulation pass; readiness 77->78.
+- 2026-10-18 codex: orbit-hop in-run mode, planet, and shield status HUD; syntax and full logic/difficulty suite pass; readiness 81->82.
+- 2026-10-18 codex: glitch-hop responsive live level-progress bar with accessible progress state; syntax and all 65-level bot regression pass; readiness 81->82.
+- 2026-10-18 codex: merge-drop mode/timer/danger HUD; Blitz countdown now text-visible with low-time warning and accessible top-row alert; logic and syntax checks pass; readiness 83->84.
+- 2026-10-18 codex: orbit-hop live combo HUD feedback; syntax and full logic/difficulty suite pass; readiness 82->83.
+- 2026-10-18 codex: orbit-hop live next-laser timing HUD with GO/WAIT/countdown states; syntax and full logic/difficulty suite pass; readiness 83->84.
+- 2026-10-18 codex: glitch-hop level-select world mastery counts and accessible level status labels; syntax and all 65-level bot regression pass; readiness 82->83.
+- 2026-10-18 codex: glitch-hop menu Continue shortcut launches first uncleared normal level or replay fallback; all JS syntax, 65-level definitions, and wiring checks pass; readiness 83->84.
+- 2026-10-18 codex: orbit-hop closest active mission helper and post-run NEXT MISSION progress/reward feedback; syntax, mission, hazard, and difficulty checks pass; readiness 85->86.
+- 2026-10-18 codex: stack-rush accessible visual mastery progress meter tied to pure mode-aware goal math; syntax, tests, and difficulty simulations pass; readiness 83->84.
+- 2026-10-18 codex: glitch-hop live normal-mode PB lead/deficit speedrun HUD with pure pace helper; syntax and all 65-level bot regression pass; readiness 86->87.
+- 2026-10-18 codex: orbit-hop persistent deepest-planet and lifetime-run records in menu/game-over feedback with revive rollback; syntax and full logic/difficulty suite pass; readiness 87->88.
+- 2026-10-18 codex: stack-rush PB feedback now preserves pre-update record context; game-over/menu show exact new-record margin, tie, or drops-to-beat; syntax, unit, and difficulty simulations pass; readiness 88->89.
+- 2026-10-18 codex: Stack Rush now normalizes malformed localStorage roots, arrays, counters, booleans, strings, and theme indexes before menu/gameplay reads; save-recovery, syntax, logic, entry/config, and difficulty checks pass; readiness 92->93.
+- 2026-10-18 claude: Skyline Sprint failure recap shows distance vs stage target and % progress; npm test passes.
+- 2026-10-18 claude: Merge Drop generated PNG art pack (jelly tiles x3 themes, stone, board, bg, icon, splash, feature) with owner-first loader; tests pass.
+- 2026-10-18 claude: Merge Drop fx-merge burst + ui-button PNG skin wired (owner-first), fx-combo/ui-panel generated; tests pass.
+- 2026-10-18 claude: Merge Drop Daily Puzzle (date-seeded hard puzzle, streak, normalized save); tests pass.
+- 2026-10-18 claude: Merge Drop 2048 tile now iridescent rainbow (all themes); tests pass.
+- 2026-10-18 claude: Merge Drop ui-coin.png now used as coin particles on chains/board clear; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop owner board-bg.png aligned (slot grid mapped to cells, panel clipped); tests + smoke pass.
+- 2026-10-18 claude: Orbit Hop store packaging (privacy.html, STORE.md, package.json, www build) + btnDouble reset bug fixed; tests + smoke pass.
+- 2026-10-18 claude: Skyline Sprint owner btn-*.png skin touch buttons at load via explicit map; npm test + smoke pass.
+- 2026-10-18 claude: Merge Drop landing squash-and-stretch juice; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop Ocean-theme store screenshot (shot-ocean.png); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop audit only (no code change): tests + smoke pass; pause/blur + Blitz chain-time already handled; remaining work needs owner art/native shell.
+- 2026-10-18 claude: Merge Drop ghost landing preview shows tile/merge value; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop stale daily-streak display fix (liveStreak); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop HUD plan line declutter (no COLUMN n); tests + smoke pass.
+- 2026-10-18 claude: Merge Drop new-record pop animation on game over; tests + smoke pass.
+- 2026-10-18 claude: Merge Drop Classic run resume (save on pause/hide, RESUME RUN); tests + smoke pass; resume not browser-clicked.
+- 2026-10-18 claude: Glitch Hop test.js 'hang' diagnosed as slow solver (>4 min), not hang; stall-cutoff attempt reverted; no code change, smoke OK.
+- 2026-10-18 claude: Pulse Run stages 1-6 now 3 cores each (3 stars reachable, apex-timed); tests + bot + smoke pass.
+- 2026-10-18 claude: Merge Drop headless-browser UI test (scripts/ui-test.js) added to npm test; passes + smoke OK.
+- 2026-10-18 claude: Orbit Hop store screenshots (scripts/shots.js, 5 shots 1290x2796); tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop per-world background hue tint (render-only); smoke OK, test.js not awaited (logic untouched).
+- 2026-10-18 claude: Glitch Hop fix die+win same-step bug (won survived respawn), www rebuilt; tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop readability (dimmed parallax, tile edge, hint contrast); sw v5, www rebuilt; smoke OK.
+- 2026-10-18 claude: Stack Rush new WebAudio engine (audio.js: reverb bus, designed SFX, adaptive scheduled music); tests + smoke pass.
+- 2026-10-18 claude: Glitch Hop readability (bg dim 0.58, stone tiles 0.78 + rim edges); test + smoke pass.
+- 2026-10-18 claude: Glitch Hop die/win exclusivity guard in logic.js, www rebuilt; smoke OK, ads/audio tests pass.

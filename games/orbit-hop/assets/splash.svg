@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2732 2732">
+<defs><radialGradient id="bg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#2a2a7a"/><stop offset="1" stop-color="#0b0b24"/></radialGradient>
+<radialGradient id="p" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#7ee8ff"/><stop offset="1" stop-color="#2a6cff"/></radialGradient></defs>
+<rect width="2732" height="2732" fill="url(#bg)"/>
+<circle cx="1366" cy="1300" r="300" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="8" stroke-dasharray="26 22"/>
+<circle cx="1366" cy="1300" r="120" fill="url(#p)"/>
+<circle cx="1630" cy="1100" r="32" fill="#ffb347"/>
+<text x="1366" y="1750" font-family="Helvetica,Arial,sans-serif" font-weight="900" font-size="170" fill="#fff" text-anchor="middle" letter-spacing="24">ORBIT HOP</text>
+</svg>

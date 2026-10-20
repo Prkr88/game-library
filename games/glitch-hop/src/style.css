@@ -1,0 +1,64 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+html,body{margin:0;height:100%;overflow:hidden;background:#0b0f24;font-family:system-ui,sans-serif;color:#fff;touch-action:none}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+.hidden{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#hud{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:12px;display:flex;flex-wrap:wrap;gap:4px 16px;max-width:calc(100vw - 72px);font-weight:700;font-size:16px;text-shadow:0 2px 6px #000a;pointer-events:none}
+#hlevel{color:#7df9ff}
+#hbest{color:#b6ff4a}
+#hbest.behind{color:#ff7ba0}
+#hbest.fresh{color:#9aa3d6}
+#hgoal{color:#ffd166}
+#hcheckpoint{color:#7dff9a}
+#hgoal.missed{color:#ff7ba0}
+#hprogress{position:fixed;top:calc(env(safe-area-inset-top,0px) + 38px);left:12px;width:min(220px,calc(100vw - 104px));height:5px;border:1px solid #7df9ff66;border-radius:6px;background:#0b0f24aa;overflow:hidden;pointer-events:none}
+#hfill{display:block;width:0;height:100%;border-radius:6px;background:linear-gradient(90deg,#7df9ff,#ff3d9a);transition:width .08s linear}
+#pausebtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 6px);right:12px;width:46px;height:46px;min-width:0;padding:0;font-size:16px;background:#ffffff22;color:#fff;z-index:2}
+#restartbtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 6px);right:66px;width:46px;height:46px;min-width:0;padding:0;font-size:26px;background:#ffffff22;color:#fff;z-index:2}
+#controls{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:0 calc(env(safe-area-inset-right,0px) + 16px) calc(env(safe-area-inset-bottom,0px) + 16px) calc(env(safe-area-inset-left,0px) + 16px);pointer-events:none;z-index:2}
+#controls .pad{display:flex;gap:14px}
+#controls button{pointer-events:auto;min-width:0;width:84px;height:84px;padding:0;font-size:34px;border-radius:50%;background:#ffffff1f;color:#fff;border:2px solid #ffffff44;touch-action:none}
+#controls button.on{background:#7df9ff66}
+#bj{width:104px!important;height:104px!important;background:#ff3d9a33!important}
+.panel{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#0b0f24e6;z-index:3;padding:16px}
+h1{font-size:64px;line-height:.95;text-align:center;margin:0;color:#7df9ff;text-shadow:3px 3px 0 #ff3d9a}
+h2{font-size:34px;margin:0;color:#7df9ff}
+.sub{margin:0 0 12px;opacity:.7;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+button{font-size:22px;font-weight:800;padding:14px 36px;border:0;border-radius:14px;background:#ff3d9a;color:#fff;min-width:160px;font-family:inherit}
+#continue{background:#7df9ff;color:#0b0f24;box-shadow:0 0 22px #7df9ff55}
+button.small{font-size:16px;background:#ffffff22;padding:10px 24px}
+button:active{transform:scale(.96)}
+#grid{overflow-y:auto;max-height:62vh;touch-action:pan-y;-webkit-overflow-scrolling:touch;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:480px;width:100%}
+#grid button{min-width:0;padding:8px 0 6px;font-size:20px;background:#1c2350;border:2px solid #7df9ff55;line-height:1.1}
+#grid .wh{grid-column:1/-1;display:flex;justify-content:space-between;margin-top:8px;padding-bottom:4px;border-bottom:1px solid #7df9ff55;color:#7df9ff;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+#grid .wh span{color:#ffd166;white-space:nowrap;font-size:12px;letter-spacing:0}
+#grid .wh.locked{opacity:.4}
+#grid button small{display:block;font-size:12px;color:#ffd166;letter-spacing:1px;min-height:14px}
+#grid button em{display:block;font-size:11px;color:#7df9ff;font-style:normal;min-height:13px;letter-spacing:0}
+#grid button.locked{opacity:.35}
+#grid button.hard{border-color:#ff3d9a}
+.stars{font-size:48px;color:#ffd166;letter-spacing:6px}
+.stars .off{color:#ffffff33}
+#pstats,#wstats,#wbadge,#wgoal{margin:0;font-size:17px;opacity:.9;text-align:center;max-width:min(92vw,560px)}
+#pstats{color:#d7dbff;line-height:1.45}
+#wbadge{color:#ff3d9a;font-weight:800}
+#wgoal{color:#ffd166;font-weight:800;text-align:center}
+#wgoal.mastered{color:#7dff9a}
+@media (max-height:420px){h1{font-size:44px}.panel{gap:8px}button{padding:10px 28px;font-size:18px}#grid{grid-template-columns:repeat(10,1fr);max-width:640px}.stars{font-size:34px}}
+#toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 56px);left:50%;transform:translate(-50%,-30px);background:#ffd166;color:#0b0f24;font-weight:700;padding:8px 16px;border-radius:20px;opacity:0;transition:.3s;z-index:20;pointer-events:none;white-space:nowrap}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);left:50%;transform:translateX(-50%);max-width:70vw;text-align:center;background:rgba(11,15,36,.94);border:2px solid #7df9ff;color:#fff;padding:10px 16px;border-radius:10px;font-size:16px;font-weight:600;pointer-events:none;opacity:0;transition:opacity .4s;z-index:5}
+#hint.show{opacity:1}
+#alist{display:flex;flex-direction:column;gap:6px;max-height:60vh;overflow:auto;margin:8px 0;text-align:left}
+.ach{padding:8px 12px;border-radius:10px;background:#1a2040;opacity:.55;display:flex;flex-direction:column;font-size:14px}
+.ach.got{opacity:1;border:1px solid #ffd166}.ach span{font-size:12px;color:#9aa3d6}
+#bd{background:#7df9ff33!important}#controls button.hidden{display:none}
+
+.panel{overflow-y:auto;-webkit-overflow-scrolling:touch}
+.panel>:first-child{margin-top:auto}.panel>:last-child{margin-bottom:auto}
+@media (max-height:620px) and (orientation:landscape){#menu h1{font-size:40px}#menu .sub{margin:0}#menu button{padding:8px 24px;font-size:16px}#menu button.small{padding:7px 20px;font-size:14px}.panel{gap:6px}}
+#controls #bl,#controls #br,#controls #bj{background-color:transparent!important;background-size:contain;background-repeat:no-repeat;background-position:center;border:0!important;color:transparent;font-size:0}
+#controls #bl{background-image:url(../assets/btn-left.png)}#controls #br{background-image:url(../assets/btn-right.png)}#controls #bj{background:url(../assets/btn-jump.png) center/contain no-repeat!important}
+#controls button.on{filter:brightness(1.5) drop-shadow(0 0 8px #7df9ff)}
+.stars .star{width:56px;height:56px;margin:0 4px;image-rendering:pixelated}@media (max-height:420px){.stars .star{width:40px;height:40px}}

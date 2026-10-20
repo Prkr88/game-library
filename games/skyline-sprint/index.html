@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10152f">
+  <title>Skyline Sprint</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" tabindex="0" role="img" aria-label="Skyline Sprint game board. Choose lanes and jump or slide under hazards."></canvas>
+    <div id="hud" hidden>
+      <span id="stageHud">STAGE 1</span><span id="scoreHud">0m</span><span id="bestHud">BEST 0</span><button id="pauseBtn" type="button" aria-label="Pause run">PAUSE</button>
+      <span id="goalHud">NEXT: JUMP</span><span id="laneHud">LANE CENTER</span><span id="streakHud">CLEAN x0</span>
+    </div>
+    <section id="menu" class="panel">
+      <p class="eyebrow">NEON CITY / ONE-THUMB RUNNER</p>
+      <h1>SKYLINE<br><b>SPRINT</b></h1>
+      <p>Switch lanes. Jump barriers. Slide under drones. Chain clean gates to reach the rooftop.</p>
+      <button id="startBtn" class="primary">START RUN</button>
+      <div class="stage-picker" aria-label="Choose stage">
+        <button id="stagePrev" type="button" aria-label="Previous unlocked stage">◀</button>
+        <button id="stageBtn" type="button">STAGE 1 · ROOFTOP · 0/3</button>
+        <button id="stageNext" type="button" aria-label="Next unlocked stage">▶</button>
+      </div>
+      <section id="stagePreview" class="stage-preview" aria-live="polite" aria-label="Selected stage challenge preview">
+        <strong id="stagePreviewTitle">ROOFTOP ROUTE</strong>
+        <span id="stagePreviewStats"></span>
+        <span id="stagePreviewRoute"></span>
+        <span id="stagePreviewGoal"></span>
+      </section>
+      <button id="dailyBtn">DAILY RUN · 0m</button>
+      <button id="overdriveBtn" hidden>SUMMIT OVERDRIVE · 0m</button>
+      <button id="skinBtn" type="button">RUNNER SKIN · NEON</button>
+      <button id="soundBtn" type="button" aria-pressed="true">SOUND ON</button>
+      <button id="helpBtn" type="button">HOW TO PLAY</button>
+      <p id="menuStats" class="stats">BEST 0m · STAGES CLEARED 0/6</p>
+      <p id="achievementStats" class="stats">ACHIEVEMENTS 0/6</p>
+    </section>
+    <section id="help" class="panel" hidden>
+      <p class="eyebrow">RUNNER BRIEFING</p><h2>READ THE ROOFTOP</h2>
+      <div class="help-grid">
+        <p><b>1 · PICK A LANE</b><br>Use ◀ ▶ or A/D. Match gate lane before it reaches you.</p>
+        <p><b>2 · PICK AN ACTION</b><br>JUMP pink barriers. SLIDE under cyan drones. Tap or use W/S.</p>
+        <p><b>3 · READ NEXT</b><br>HUD shows lane, action, and NOW when timing is close. Shards reward clean routes.</p>
+        <p><b>4 · MASTER RUNS</b><br>Clear stages, collect 2 shards, and finish 8+ gates cleanly for 3 medals.</p>
+      </div>
+      <button id="helpCloseBtn" class="primary">BACK TO MENU</button>
+      <button id="helpStartBtn">START ROOFTOP</button>
+    </section>
+    <section id="pause" class="panel" hidden>
+      <p class="eyebrow">RUN PAUSED</p><h2 id="pauseTitle">STAGE 1</h2><p id="pauseSummary"></p>
+      <button id="resumeBtn" class="primary">RESUME</button><button id="menuBtn">QUIT TO MENU</button>
+    </section>
+    <section id="over" class="panel" hidden>
+      <p class="eyebrow" id="overEyebrow">RUN COMPLETE</p><h2 id="overTitle">ROOFTOP REACHED</h2><p id="overSummary"></p>
+      <button id="reviveBtn" class="primary" hidden>WATCH AD · CONTINUE</button><button id="practiceBtn" hidden>PRACTICE FROM 50%</button><button id="retryBtn">RUN AGAIN</button><button id="overMenuBtn">MENU</button>
+    </section>
+    <div id="live" class="sr-only" aria-live="polite"></div>
+    <div id="touch" hidden>
+      <button data-action="left" aria-label="Move left">◀</button><button data-action="jump" aria-label="Jump">JUMP</button>
+      <button data-action="slide" aria-label="Slide">SLIDE</button><button data-action="right" aria-label="Move right">▶</button>
+    </div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

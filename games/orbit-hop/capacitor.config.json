@@ -1,0 +1,7 @@
+{
+  "appId": "com.gamelibrary.orbithop",
+  "appName": "Orbit Hop",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#0b0b24"
+}

@@ -1,0 +1,75 @@
+{
+ "date": "2026-10-18T18:14",
+ "readiness": 48,
+ "market_potential": 31,
+ "scores": {
+  "gameplay": 56,
+  "content_difficulty": 60,
+  "art": 48,
+  "audio": 38,
+  "ux_onboarding": 43,
+  "mobile": 38,
+  "stability": 54,
+  "store": 25
+ },
+ "weights": {
+  "gameplay": 20,
+  "content_difficulty": 15,
+  "art": 15,
+  "audio": 8,
+  "ux_onboarding": 10,
+  "mobile": 10,
+  "stability": 12,
+  "store": 10
+ },
+ "assessors": {
+  "opus": {
+   "scores": {
+    "gameplay": 55,
+    "content_difficulty": 60,
+    "art": 48,
+    "audio": 32,
+    "ux_onboarding": 42,
+    "mobile": 42,
+    "stability": 60,
+    "store": 28
+   },
+   "market_potential": 28,
+   "market_notes": "Drop-merge number puzzles (Drop the Number, 2048 variants, X2 Blocks) are an extremely crowded genre, led by incumbents with big UA budgets. Daily puzzles and the Rise/Hardcore modes add some retention, but nothing here would make it stand out or be discovered organically.",
+   "summary": "The core loop is solid and well engineered. The pure logic is deterministic and tested: node test.js passes in about 60s, with 30 solver-verified puzzles, undo, a preview HUD, cascades, juice (squash, bursts, shake, haptics) and many modes. Presentation is still at prototype level. The AI-generated jelly tiles and board look good on the default theme, but the Sunset/Ocean themes fall back to script-generated tiles. The menu is a long stack of identical pill buttons, some with only an emoji on them. Audio is entirely WebAudio oscillator synthesis. Monetization is a bridge stub with no ad SDK and no IAP, and there are no native ios/android projects, so it cannot be submitted today.",
+   "blockers": [
+    "No native shell: there are no ios/ or android/ Capacitor projects, no AdMob/UMP/ATT plugin in package.json, and window.MergeAdsNative is never defined. Ads are therefore dead code, there is no IAP or remove-ads purchase, and the 'CLEAR LOW TILES (ad)' revive is handed out free whenever score > 200, which is misleading.",
+    "Audio is all synthesized oscillator and noise blips plus a procedural pad. There is no recorded music or designed SFX, which is below the bar for a casual puzzle store release.",
+    "The menu UX is amateurish. Twelve full-width pill buttons are stacked vertically (mute, haptics and trophy are huge pills with a lone emoji), there is no proper mode-select screen, and the pre-play tutorial is just a two-line hint. On 320-568px phones the list will need scrolling, and this has not been verified on a device.",
+    "The art is inconsistent. Owner AI art covers only the default theme; Sunset/Ocean use generated tile-*-t1/t2 fallbacks. Screenshots are mixed and stale: shot-run shows the old purple programmer board and a 'Regular!' toast, and shot-menu is missing the Hardcore/Puzzle buttons and shows 'No runs yet' next to Best 5240.",
+    "Store readiness is incomplete. privacy.html is not hosted at a public URL, there is no screenshot set at the required iPad sizes, the screenshots don't match the current build, and STORE.md lists 23 achievements while GAME.md says 24. No real-device QA (safe areas, audio unlock, performance) is documented, and the Chrome UI test was not run here."
+   ],
+   "readiness": 48
+  },
+  "astra": {
+   "scores": {
+    "gameplay": 56,
+    "content_difficulty": 61,
+    "art": 49,
+    "audio": 43,
+    "ux_onboarding": 44,
+    "mobile": 35,
+    "stability": 48,
+    "store": 22
+   },
+   "market_potential": 34,
+   "market_notes": "Accessible merge loop and demanding puzzles offer replay value. Commercial differentiation remains weak against established number-merging games, even with full polish.",
+   "summary": "Substantial browser prototype, not ready for mobile-store release. Thirty solver-validated puzzles, multiple modes, cascade effects and real PNG artwork provide substance, but presentation, lifecycle handling and native delivery remain unfinished. Logic tests, audio smoke test and bot simulations passed; browser UI test was blocked by sandbox permissions, leaving live mobile behavior unverified.",
+   "blockers": [
+    "Native release missing: no iOS or Android projects, signing configuration or device-tested builds; Capacitor configuration alone is insufficient.",
+    "Fix confirmed state bugs: Hardcore RETRY starts Classic, malformed resume grids crash, and finishing another endless mode deletes saved Classic progress.",
+    "Fix mobile lifecycle and layout: backgrounding during animation skips pause/save; puzzle toolbar adds a fourth button without portrait wrapping, exceeding narrow screens.",
+    "Finish visual integration and store assets: PNGs have conspicuous transparency-edge artifacts, themes mix art styles, and packaged icons/store screenshots retain older visuals.",
+    "Complete monetization and submission setup: ads require an absent native bridge, revive advertises an ad but grants free continuation, purchases are absent, and privacy hosting/disclosures remain unfinished."
+   ],
+   "readiness": 47
+  }
+ },
+ "errors": {},
+ "sessions_at_assessment": 84
+}

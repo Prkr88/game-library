@@ -1,0 +1,54 @@
+{
+ "date": "2026-10-18T19:23",
+ "readiness": 36,
+ "market_potential": 20,
+ "scores": {
+  "gameplay": 42,
+  "content_difficulty": 34,
+  "art": 36,
+  "audio": 12,
+  "ux_onboarding": 36,
+  "mobile": 45,
+  "stability": 55,
+  "store": 14
+ },
+ "weights": {
+  "gameplay": 20,
+  "content_difficulty": 15,
+  "art": 15,
+  "audio": 8,
+  "ux_onboarding": 10,
+  "mobile": 10,
+  "stability": 12,
+  "store": 10
+ },
+ "assessors": {
+  "opus": {
+   "scores": {
+    "gameplay": 42,
+    "content_difficulty": 34,
+    "art": 36,
+    "audio": 12,
+    "ux_onboarding": 36,
+    "mobile": 45,
+    "stability": 55,
+    "store": 14
+   },
+   "market_potential": 20,
+   "market_notes": "This is a clone of Ketchapp's Stack in one of the most crowded hyper-casual genres, and nothing in the mechanics sets it apart: Surge, the daily modifiers and Hard mode are small variations. Without a big UA budget and an ad-mediation setup it can't win on CPI against the established Stack-likes.",
+   "summary": "The core loop works, and the pure logic is tested well: all 18 test groups pass, and the sim shows difficulty rising, with skilled bot averages around 62/44/27 at the three timing-noise levels. The game also has Hard mode, five rotating daily modifiers, 12 achievements and a coin economy. It falls down on presentation and shipping. The runtime draws isometric AI-generated slab sprites stretched onto a flat 2D side-view sweep, so the stack looks mismatched. The HUD stacks six rows of small text over the playfield. Audio is raw oscillator beeps. The app icon is programmer art, and the ads are stubs that grant rewards for free. Overall it's a solid prototype, not a shippable product.",
+   "blockers": [
+    "Monetization is stubbed: showRewardedAd calls cb(true) when there is no SDK, so continues and double-coins are free. There is no AdMob/mediation, no IAP (remove ads), no ATT/UMP consent flow, no privacy policy and no analytics.",
+    "The store icon (icon-1024/512/192) is programmer art: flat rounded rectangles on black with dots, which clashes with the polished store-feature and splash art. There are also no real App Store or Play screenshots, and smoke.png is a landscape debug capture.",
+    "The art is visually incoherent in play. Isometric slab sprites are scaled horizontally and moved in pure 2D side-view, so the top faces skew wrongly as width changes and the tower doesn't read like Stack. The perfect-zone band is a few pixels wide, and the HUD crowds 6+ lines of 9-13px text (mode, PB, goal, bar, cue, feedback, perfect rate) over the play area.",
+    "Audio is placeholder: single-oscillator sine, square and sawtooth beeps plus a sine arpeggio as 'music'. There are no recorded SFX or music track, and no separate music/SFX volume settings.",
+    "Capacitor packaging is not ready: webDir is '.', so test.js, sim.js, the .md files and smoke.png would ship, and there are no ios/android projects, splash or icon plugin config, or Haptics plugin install. The 2.2-2.4 MB bg PNGs (five themes, about 11 MB) load uncompressed. There's no real tutorial beyond one 'TAP to drop' line, no settings screen, and the daily-challenge PB shown in the HUD isn't scoped to today until a run finishes."
+   ],
+   "readiness": 36
+  }
+ },
+ "errors": {
+  "astra": "s://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:58 PM.\nERROR: You\u2019ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:58 PM.\n"
+ },
+ "sessions_at_assessment": 37
+}

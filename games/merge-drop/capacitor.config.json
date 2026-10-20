@@ -1,0 +1,8 @@
+{
+  "appId": "com.gamelibrary.mergedrop",
+  "appName": "Merge Drop",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#1b1b3a",
+  "ios": { "contentInset": "always" }
+}

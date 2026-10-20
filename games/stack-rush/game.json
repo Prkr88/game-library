@@ -1,0 +1,219 @@
+{
+ "name": "Stack Rush",
+ "slug": "stack-rush",
+ "genre": "Hyper-casual / stacking",
+ "description": "Tap to drop the sliding block; overhang gets cut. Land perfect drops to keep width and build combos.",
+ "created": "2026-10-17",
+ "updated": "2026-10-18",
+ "readiness": 99,
+ "market_potential": 50,
+ "market_notes": "Stacker-style games are proven hyper-casual hits (Stack, Tower Bloxx) but extremely crowded; needs strong juice and themes.",
+ "readiness_notes": "Core loop, combos, themes, coins, achievements, hard mode, daily reward + daily challenge, pause recap, mastery stats, mode-aware mastery goal chase HUD with visual progress meter, visible tolerance cue, directional live perfect/landing/miss timing cue, change-only screen-reader cue announcements, persistent accessible post-drop outcome and retained-width feedback, live perfect-rate and uninterrupted-streak feedback, date-scoped Daily PB feedback, corruption-safe local save normalization, safe-area touch-scrolling panels, offline cache-first web shell, semantic canvas board label, visible keyboard focus, active-overlay keyboard focus handoff, short-portrait HUD compression, ad hooks done. Missing: real ad integration, store screenshots, human playtest.",
+ "sessions": 39,
+ "entry": "index.html",
+ "next_steps": [
+  "Skyline Sprint btn-* owner art unused",
+  "Stack Rush: audio engine, more mastery content",
+  "Store screenshots",
+  "Store screenshots",
+  "Bundle @capacitor/haptics in native build",
+  "Wire window.StackAdsNative to AdMob+UMP/ATT in Capacitor shell; restrict webDir to a www build"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added keyboard focus handoff between menu, gameplay canvas, pause, continue, and game-over overlays; hidden actions no longer retain focus; syntax, logic, metadata, entry, and accessibility wiring checks pass; readiness 98->99."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Created game: stacking core loop, perfect combos, generated SFX, save, mute, Capacitor config."
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Tutorial hint, coins, 4 unlockable themes, parallax starfield"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Icon/splash/manifest icons, rewarded-ad continue (once per run, score>=5) with ad bridge hook"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Generative music, pentatonic perfect-combo notes, interstitial hook every 3 runs"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Perfect-drop shockwave ring + flash, score milestone callouts, visibility resume fix"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Pause button/menu (auto-pause on background), alternating block entry side, block gloss/shade"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Daily streak reward + rewarded double-coins on game over; dailyReward logic+test"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "6 achievements with coin rewards + toasts, Capacitor haptics bridge"
+  },
+  {
+   "date": "2026-10-17",
+   "agent": "claude",
+   "summary": "Difficulty: speed ramps to 4.2 past score 40, perfect window shrinks 0.025->0.012; sim.js bot shows skill-gated scores (80/49/27 avg)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Hard mode: 0.6 start width, no regrow, 1.25x speed, 0.7x perfect window, separate best; sim avg 80/49/27 -> 42/23/12."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Daily Challenge: 5 rotating modifier sets, streak coin bonus, separate best, sim-verified harder than classic."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Surge mechanic: block speed warps within each sweep from score 25 (15 hard); sim skilled avg 80 -> 62 classic"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "+6 achievements (12 total): Combo x20, Score 150, Hard 15/30/50, Daily 25; tested"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent mastery stats and run summaries: lifetime runs/drops/perfects/best combo plus mode-aware game-over feedback"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live run HUD with explicit mode label and combo counter; combo state now stays readable during precision play"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added mode-aware personal-best chase HUD showing record and drops-to-beat, with new-record highlight"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added CLOSE/CLEAN/RISKY width-retention feedback after non-perfect drops; physics and difficulty unchanged"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added mode-aware mastery goal chase HUD and game-over next-target feedback; pure target helper tested"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live gold perfect-landing band tied to shared tolerance logic; syntax, unit, and difficulty simulations pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live TAP PERFECT/TAP TO LAND/MOVE IN timing cue from pure shared landing logic; tests and difficulty simulations pass"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added accessible visual mastery progress meter tied to pure mode-aware goal math; syntax, tests, and difficulty simulations pass; readiness 83->84"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent last-run mode, score, perfect, and combo feedback on menu with mode-record chase context; syntax, logic, and difficulty checks pass; readiness 84->85"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pure perfect-drop rate feedback to live HUD, menu last-run summary, and game-over stats; syntax, unit, and difficulty simulations pass; readiness 85->86"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added current/run-best/lifetime perfect-streak mastery feedback across HUD, game-over, and menu; pure helper, syntax, unit, and difficulty simulations pass; readiness 86->87"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added rewarded-continue panel context for exact mode PB gap and next mastery goal; pure helper, syntax, unit, and difficulty simulations pass; readiness 87->88"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed Stack Rush PB feedback by preserving pre-update record context; game-over/menu now show exact new-record margin, tie, or drops-to-beat; pure helper, syntax, unit, and difficulty simulations pass; readiness 88->89"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Scoped Daily PB reset before game-over record feedback so a new calendar day cannot display yesterday's chase target; pure helper, syntax, and difficulty simulations pass; readiness 89->90"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Directional timing cue now tells players MOVE LEFT or MOVE RIGHT before a miss; pure cue tests, syntax, and difficulty simulations pass; readiness 90->91"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added accessible post-drop outcome feedback for perfect width, retained-width grade/percentage, and miss recovery; pure helper, syntax, unit, and difficulty simulations pass; readiness 91->92"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Hardened Stack Rush local progression parsing with pure normalization for malformed roots, arrays, counters, booleans, strings, and theme indexes; syntax, save-recovery, logic, and difficulty simulations pass; readiness 92->93"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made Stack Rush menu, pause, continue, and game-over panels safe-area padded and touch-scrollable so short portrait screens keep actions reachable; syntax, logic, and difficulty simulations pass; readiness 93->94"
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact pause recap for mode, score, PB chase, mastery goal, perfect rate, streak, and combo before mobile resume/menu choice; syntax, logic, difficulty, metadata, and entry checks pass; readiness 94->95."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added local cache-first service worker and HTTP(S)-only registration for offline PWA relaunch; direct file opening remains supported; readiness 95->96."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added semantic canvas board description, visible keyboard focus styling, and compressed short-portrait HUD rules; gameplay unchanged; syntax, logic, difficulty, metadata, and entry checks pass; readiness 96->97."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made live timing cue announcements change-only so aria-live does not rewrite every animation frame; gameplay unchanged; syntax, logic, metadata, entry, and accessibility wiring checks pass; readiness 97->98."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Wired all owner PNGs: iso slab blocks (9-slice depth), base, perfect block, shards, fx ring, 5 theme backgrounds w/ parallax (new Ocean theme), ui button/coin/crown; shape fallback kept; sw cache v2."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New WebAudio engine (src/audio.js): reverb+compressor bus, designed SFX, scheduled adaptive chord/arp music; sw v3."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Consent-gated ads adapter (ads.js): no free rewards on web, continue/double-coins hidden without native bridge, interstitial frequency cap; privacy.html; sw v4; test added."
+  }
+ ]
+}

@@ -1,0 +1,233 @@
+{
+ "name": "Pulse Run",
+ "slug": "pulse-run",
+ "genre": "Precision auto-runner platformer",
+ "description": "A neon auto-runner where jump timing, sliding, and route memory carry six escalating stages to the reactor core.",
+ "created": "2026-10-18",
+ "updated": "2026-10-18",
+ "readiness": 99,
+ "market_potential": 61,
+ "market_notes": "Mobile auto-runners have broad one-thumb reach; precision timing, three-star replay, and short stages support retention. Neon presentation and low-friction controls offer trailer-friendly moments, while the lane is crowded.",
+ "readiness_notes": "Playable canvas loop, six hand-authored stages with progression-gated stage select, persistent stage unlocks, touch and keyboard controls with variable jump height, 120ms jump buffering and 100ms coyote time, touch-safe pause HUD and pointer-cancel-safe slide control, first-run control onboarding, exact-position next-hazard and uncollected-core cue with FAR/READY/NOW urgency bands, visual accessible stage-progress meter, live saved-PB pace cue, change-only screen-reader announcements for hazard action/urgency and PB pace transitions, cause-specific death retry coaching, local jump/core/clearance particle feedback, successful-clearance cue with optional local tone and haptic, shared optional WebAudio plus Capacitor/fallback haptics for jump/core/death/clear events, pause/resume, visibility-change auto-pause, exact pause recap with stage/progress/timer/core/checkpoint context, checkpoint-only pause retry action, 50% checkpoint retry, persistent mid-stage resume with validated and corruption-safe menu recovery, malformed-save-safe local progression parsing, explicit pause-menu abandon cleanup, safe-area touch-scrolling stage select/pause/result panels, local stars, per-stage speedrun PBs, live timer, generated par targets, stage-select next-mastery summary, six district PNG backdrops and local PNG runner/hazard/core/ground art with owner-art priority plus generated fallbacks, regeneration script, HTTP(S) cache-first service worker with direct-file fallback, mobile viewport, Capacitor config. Missing: richer audio, native ads, human balance pass, device QA, store publishing integration.",
+ "sessions": 42,
+ "entry": "index.html",
+ "next_steps": [
+  "Human playtest stages 7-10 (0.25s hazard gaps) for fairness; consider dedicated bg art for districts 7-10",
+  "Human playtest variable jump height, first-run onboarding, particle readability, and jump-button release behavior on small portrait screens",
+  "Human playtest jump/slide readability, next-hazard urgency wording/color, locked-stage wording, death retry tips, pause reachability, checkpoint placement, stage difficulty, PB/par wording, and clear recap density",
+  "Add richer local SFX/music variations",
+  "Wire native rewarded continue and interstitial hooks",
+  "Human test resume wording, pause-menu abandon cleanup, stale-save recovery, and stage-clear recap on browser refresh and small portrait screens",
+  "Human playtest visual progress meter contrast and overlap with hazard HUD on small portrait screens",
+  "Serve once online, then verify offline relaunch and cached asset recovery",
+  "Human playtest PB pace cue wording, color, and small-screen HUD density",
+  "Human playtest CLEAN JUMP/CLEAN SLIDE cue timing, particle readability, and haptic intensity",
+  "Test recovery after clearing or corrupting pulseStars/pulseTimes browser storage",
+  "Human test resume recovery after corrupting pulseResume fields on small portrait screens",
+  "Human playtest responsive two-row HUD and labeled touch controls on 320px portrait screens",
+  "Human playtest pause checkpoint action visibility before and after 50% progress",
+  "Human playtest saved-run RESUME wording and restored position on browser refresh",
+  "Human playtest core jump height and grounded/short-hop miss behavior across all six routes",
+  "Audio: per-district music variations",
+  "Endless: add daily seed + leaderboard-style share",
+  "Unique backdrops for districts 7-14",
+  "Ads/privacy/store screenshots"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Stages 1-6 now each hold 3 cores (were 1/1/0/0/0 on 3-6, so 3 stars was unreachable); cores sit at hazard apex for skill-timed jumps. Tests + bot pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Added stages 7-10 (Ghost Wire, Static Storm, Zero Hour, Singularity): speed 420-530, 0.25-0.30s min hazard gaps, dense mixed combos. scripts/bot.js exhaustive-search bot proves all 10 stages clearable and monotonically harder; wired into test.js."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Required vertical airborne contact for pulse-core collection: grounded overlap and short hops no longer award stars; added pure coreHit helper, runtime wiring, and regression coverage for miss/collect cases."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed shared readArray scope used by stage mastery and PB HUD callbacks, preventing recurring ReferenceError after boot; wired six-frame grounded runner animation; added regression checks for save recovery, progression, resume wiring, and frame selection."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added coherent local PNG art pack and SVG regeneration source: six district backdrops, runner poses, ground, gap, barriers, pulse core, controls, checkpoint, reactor, icon, splash, and store feature; runtime prioritizes owner art with generated fallbacks and caches gameplay art offline."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Created six-stage mobile precision auto-runner with jump/slide controls, stars, stage select, local progression, and pure collision/progression helpers."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added pause/resume controls and 50% checkpoint retry flow, preserving stage timing and collected cores; syntax and checkpoint logic checks pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live run timers, per-stage speedrun PBs, generated par targets, clear-time comparison, and stage-select PB display; syntax, pure mastery, and difficulty checks pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added persistent mid-stage resume: pause/browser-exit saves stage position, timer, cores, and checkpoint; menu validates and restores saved runs; terminal outcomes clear stale saves."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added accessible stage-clear mastery recap with missing-core goal, exact PAR/PB chase, next-stage PAR, and final 3-star guidance; pure helper and syntax checks pass; readiness 59->62."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added 120ms jump buffering and 100ms coyote time for forgiving touch timing; pure jump-assist, syntax, and six-stage difficulty checks pass; readiness 62->65."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live next-hazard HUD cue with pure action/distance helper; verified jump/slide/core mapping, syntax, and six-stage structure; readiness 65->68."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added cause-specific death retry coaching for gaps, low barriers, and high barriers; pure helper, syntax, and six-stage difficulty checks pass; readiness 68->71."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added shared optional WebAudio and Capacitor/fallback haptic feedback for jump, core, death, and stage-clear events; syntax and fallback checks pass; readiness 71->74."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Gated stage select to cleared content plus next stage, with locked labels and direct-start/resume guards; pure unlock, syntax, and difficulty checks pass; readiness 74->76."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed mobile HUD pause hit area and pointer-interrupted slide state; syntax and focused touch-wiring checks pass; readiness 77->78."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed progression persistence and upgraded next-action HUD to exact-position uncollected-core guidance; pure cue, syntax, and wiring checks pass; readiness 79->81."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added FAR/READY/NOW urgency bands to exact next-action HUD cues, with pure threshold checks and syntax validation; readiness 81->82."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added variable jump height: held touch/keyboard input preserves full jump, release creates short hop, and cancel paths clear held state; syntax validation pass; readiness 82->84."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added short-lived local canvas particle bursts for jump launches and pulse-core pickups; no gameplay or asset-loading changes; readiness 84->85."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added first-run control onboarding for jump, slide, and variable jump height; input dismisses prompt and local flag prevents repeat; readiness 85->86."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added visibility-change auto-pause so mobile app switching saves active runs before elapsed time advances; existing resume flow restored on return; readiness 86->87."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added exact pause recap for stage, progress, elapsed time, collected cores, checkpoint readiness, and saved state; pure helper and syntax checks pass; readiness 87->88."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added visual accessible stage-progress meter synchronized to exact run distance; syntax, wiring, and six-stage difficulty checks pass; readiness 88->89."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added live saved-PB pace cue showing ahead/behind/tied status during replay; pure helper, syntax, and six-stage difficulty checks pass; readiness 89->90."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added successful hazard-clearance feedback: CLEAN JUMP/CLEAN SLIDE cue, local tone/haptic, and pink particle burst after safe passes; collision physics unchanged; syntax, pure-helper, and six-stage difficulty checks pass; readiness 90->91."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Hardened pulseStars and pulseTimes browser-save parsing: malformed JSON and non-array values now fall back safely without boot or HUD crashes; syntax, save-recovery, pure-logic, and entry checks pass; readiness 91->92."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Hardened pulseResume parsing: invalid stage, position, timer, checkpoint, and collection fields now reject or normalize safely; syntax, corruption-recovery, pure-logic, and entry checks pass; readiness 92->93."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made stage select, pause, and result panels safe-area padded and touch-scrollable so short portrait screens keep stage buttons and retry/menu actions reachable; syntax, responsive wiring, JSON, and entry checks pass; readiness 94->95."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Fixed valid Pulse Run resume saves being rejected by a malformed normalized vertical-position return; saved runs now restore position, timing, stars, and checkpoint safely; syntax and resume normalization checks pass; readiness 96->97."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Added HTTP(S)-only cache-first service worker for local offline relaunch, precaching Pulse Run shell assets while preserving direct file opening; syntax, metadata, entry, and cache coverage checks pass; readiness 97->98."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "codex",
+   "summary": "Made hazard and PB-pace screen-reader announcements change-only via separate polite live regions; exact visual HUD updates remain continuous; syntax, metadata, entry, and accessibility wiring checks pass; readiness 98->99."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Integrated owner PNGs: mid-ground skyline parallax, jump/slide touch button art, burst sprite on pickups/clears; sw cache bumped."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "New WebAudio engine: reverb, designed SFX, adaptive procedural music (tempo/layers scale with stage speed, pauses with game)."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Death juice: runner-hit pose, screen shake (reduced-motion aware), pink flash, burst, 0.55s beat before result panel."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Stages 11-14 (Overclock, Meltdown, Event Horizon, Pulse Zero; speed 565-690, min gap 0.21s) generated by scripts/gen_stages.js, bot-verified clearable, difficulty 49->60 monotonic; tests + smoke pass."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "App icons (192/512/maskable/180/favicon) + Capacitor resources derived from owner icon/splash via art/make_icons.py; manifest icons, favicon links, sw cache v4."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Settings panel (sound FX / music / vibration toggles, persisted); sw v5."
+  },
+  {
+   "date": "2026-10-18",
+   "agent": "claude",
+   "summary": "Endless mode (unlocks after stage 3): procedural hazards, speed 300->620 and gaps 0.62s->0.30s ramp, score/best, bot-verified generator (scripts/endless_check.js, 72/72 clearable); sw v6."
+  }
+ ]
+}

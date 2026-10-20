@@ -1,0 +1,7 @@
+{
+  "appId": "com.gamelibrary.glitchhop",
+  "appName": "Glitch Hop",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#0b0f24"
+}
